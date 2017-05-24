@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_11.htm">上一页</a>
+<a class="pagelink" href="#">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：12/12页
+]
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">679</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>寄存器和加法器的在Xilinx Virtex-7 FPGA的DSP48E1中完成。</span><span class='green'>该DSP芯片用于减少CLB（可重构逻辑块）片的数量，以减少时钟网络上的负载，并保证1 GHz的时序。</span><span class='green'>fcw被提供给DSP片的C输入，取自P输出。</span><span class='green'>32位相位累加器被映射到DSP的位47:</span><span class='green'>16以便最小化功耗，否则DSP的MSB将继续依赖于来自的MSB的进位。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">680</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>C角度反转</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">681</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/1036/1036.htm' target='right' class='orange' >角度反转将相位累加器的转换为单位圆的第一个八分圆中的值。</a><span class='green'>为实现这个映射，去掉了两个MSB（MSB [1]和MSB [2]）的。</span><a href='../sentence_detail/1038/1038.htm' target='right' class='orange' >这有效地将相位从[0，2]截断为[0，1/2]，因此将角度映射到第一象限。</a><span class='green'>使用MSB [3]使得到的角度’有条件地反映约/ 4，以生成值[0，/ 4）。</span><span class='green'>MSB [3] = 1表示’表示范围[/ 4，/ 2）;</span><span class='green'>当MSB [3] = 0时，’无需修改，否则取补码。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">682</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>镜像操作在数学方式表示为= 1/2-’。</span><span class='green'>因为’表示在区间[0，1/2]内没有符号位的定点数，所以使用1/2减的操作等效于补码操作。</span><span class='green'>而不需要执行二进制补码。</span><span class='green'>因此，所得的值可以比它应该少一LSB。</span><a href='../sentence_detail/1046/1046.htm' target='right' class='orange' >通常这一个LSB误差会导致明显的相位截断杂散。</a><span class='green'>为了避免这种杂散，我们将补偿这个丢失的LSB，这是一个重要的新技术，与[5]中提到的方法相关，</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">683</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>D 只读型存储器</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">684</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ROM有三个作用。</span><span class='green'>第一个是实现我们的DDFS的coarse阶段输出。</span><span class='green'>在本设计中，ROM有128个字。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">685</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ROM的第二个目的是作为弧度转换，将[0，1/4]转换为[0，/ 4）。</span><span class='green'>许多基于旋转的DDFS设计为此目的使用专用的/ 4乘法器电路。</span><span class='green'>相反，我们将/ 4因子包含在预先计算的ROM数据中。</span><span class='green'>这样做，而不仅要求两个ROM输出，cos_M和sin_M，我们现在需要四个输出：</span><span class='green'>X_M，Y_M，X_R和Y_R。</span><span class='green'>存储在ROM位置的值由（8）给出。</span><span class='green'>幸运的是，第二组输出仅需要七位，而不是整个17位SWL。</span><span class='green'>这需要更多的FPGA结构LUT来实现ROM，但实际上小于在结构中实现/ 4乘数的开销。</span><span class='green'>或者，我们可以在DSP片中实现/ 4乘法器，但是比仅仅使ROM更大而导致更大的功耗。</span><span class='green'>在ROM中包含/ 4因子的另一个优点是减少了延迟。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">686</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ROM的最终目的是补偿数据路径中的有限信号字长产生的错误和截断。</span><span class='green'>通过优化ROM的值，以最大限度地减少DDFS相对于理想值X和Y的误差。</span><span class='green'>这允许使用SWL的位数比输出精度大2位，从而不需要使用四舍五入。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">687</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>Virtex-7 FPGA的原生LUT具有六个输入。</span><span class='green'>128字ROM的每个输出位分解为两个六输入LUT，一个MUXF7和一组输出寄存器。</span><span class='green'>所有这四个组件都可以封装在单个逻辑芯片上，这对实现1 GHz时钟至关重要。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">688</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>E 相位旋转</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">689</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>1) 记录</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">690</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/1070/1070.htm' target='right' class='orange' >将_L的原码重新编码为带符号二进制补码t，如（6）所示。</a><span class='green'>可以将t_N + 1位设置为0，并在ROM中进行补偿，而不会使频谱性能下降。</span><span class='green'>因此，重新编码在角度的MSB上减少到单个反向器。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">691</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2）乘法-加法器</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">692</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>乘法-加法器是角度旋转阶段的核心。</span><span class='green'>其结构如图5.2所示。</span><span class='green'>这个模块有两个功能。</span><span class='green'>主要功能是使用带符号二进制补码t（它是L的重新编码版本）进行fine角度旋转（7）。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">693</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>乘法器的次要功能是输出’的LSB的/ 4镜像。</span><span class='green'>回想一下/ 4镜只放在ROM之前，而不是在乘法器之前。</span><span class='green'>使用乘法器的条件否定特征可以无代价实现镜像，无需逻辑成本。</span><span class='green'>另外，通过执行t的二进制补数否定，我们补偿ROM的/ 4镜像中的补码否定缺失LSB。</span><span class='green'>这是因为，对于由二进制补码n位数表示的最小值，该数字的负值溢出到一个附加位。</span><span class='green'>关键的细节是，由于重新编码，t的符号位是_L的MSB的倒数。</span><span class='green'>这意味着对于’= 1/4（表示弧度角/ 4），t的值为-1/4。</span><span class='green'>基于MSB [3]的乘法器中的负t使其旋转1/4而不是溢出到0。</span><span class='green'>该虚拟位在ROM/ 4镜像中增加一个LSB。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">694</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/1087/1087.htm' target='right' class='orange' >乘法器 - 加法器通过在FPGA中的DSP片中实现。</a><a href='../sentence_detail/1088/1088.htm' target='right' class='orange' > DSP片中的硬乘法器比在FPGA架构中实现的乘法器更高效。</a><span class='green'>对于X’，Y_R被提供给DSP片的A输入，t被提供给B输入，X_M被提供给C输入，X’取自P输出。</span><span class='green'>对于Y’，X_R被提供给A输入，t被提供给B输入，Y_M被提供给C输入，Y’取自P输出。</span><span class='green'>使用输入位A [6：</span><span class='green'>0]，B [9：</span><span class='green'>0]和C [23：</span><span class='green'>7]。</span><span class='green'>因为t是一个有符号的数字，所以它必须扩展到B [17:</span><span class='green'>10]。</span><span class='green'>X’和Y’取自P [23：</span><span class='green'>9]。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">695</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>F 输出阶段</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">696</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>输出阶段负责将单位圆[0，/ 4]的第一个八分圆的X’和Y’输出映射到[0，2]内的正确的八分圆。</span><a href='../sentence_detail/1101/1101.htm' target='right' class='orange' >这可以在三个MSB控制下，通过多路选择器和反向逻辑实现。</a><span class='green'>X’和Y’与两个多路选择进行交换，其次是减法器，可选择地反向两者。</span><span class='green'>注意在交换阶段之后从15位增长到16位，以允许在否定后包含符号位。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">697</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>G延迟</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">698</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>本设计具有8个时钟周期的切换延迟。</span><span class='green'>在1 GHz时，这相当于8 ns。</span><span class='green'>时钟周期延迟分别是：</span><span class='green'>相位累加器中的两个周期，/ 4镜中的一个周期，ROM中的一个周期，乘法器加法器中的三个周期，以及输出级中的一个周期。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">699</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5 结论</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">700</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>该设计在Virtex-7 485T FPGA中实现。</span><span class='green'>它需要一个139 LUTs，3个DSP48，并在1 GHz时消耗54.9 mW的功率。</span><span class='green'>以前只能在ASIC设计中实现这种性能水平。</span><span class='green'>由于1 GHz性能超过器件规格，所以使用BIST电路验证了最大数据速率。</span><span class='green'>静态时序分析报告在-3速等级FPGA器件中实现741.84 MHz性能，这是DSP片的最大速度。</span><span class='green'>测量的功率与最近报道的FPGA工作相比处于领先[6] - [7]，即使在考虑到器件差异时也是如此。</span><span class='green'>DDFS还优于在十年之前实现的ASIC设计[5]，FPGA的处理优势被抵消了ASIC功率开销。</span><span class='green'>我们设计的SFDR为120.2 dBc，SNR为96.5 dB。</span><span class='green'>时间误差总是不超过一个LSB（与理想的舍入值相比）。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">701</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>表5.1性能比较</span>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_11.htm">上一页</a>
+<a class="pagelink" href="#">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：12/12页
+]
+</div>
+
+<br>
+<div style="margin-left:8px">
+
+<div style="text-align:center;background-color:#CA122C;margin-top:30px;overflow:hidden;">
+<a href="http://www.paperpass.com/publish/index?from=ppreport_banner" target="_blank" style="display:block;"><img height="180" src="http://file.paperpass.com/images/fabiao.jpg"></a>
+</div>
+
+</div>
+</div>
+
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2017 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>

@@ -1,0 +1,1521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+
+<div class="zhengwen">
+
+<span style="margin-left:25px"></span>中文摘要数控振荡器，是一种用数字信号控制频率、相位的频率合成器。
+<br><br>
+<span style="margin-left:25px"></span>直接数字频率合成(DDS)方法是实现数控振荡器的全数字方法，其优点包括精细的频率分辨率、极快的转换时间和频率范围宽等，应用领域非常广泛。传统结构的DDS因为使用大查找表，导致速度和精度不能兼顾。多年来，很多研究者都致力于解决该问题，并将DDS性能不断提升。本文采用直接数字合成(DDS)方法，实现了一种高速高精度的数控振荡器的设计和仿真。
+<br><br>
+<span style="margin-left:25px"></span>本文提出了一种ROM-CORIDC混合结构，在噪声量级不变的情况下，查找表地址缩减了一半以上。通过合理资源配置、流水线加速等方法，大大加速了时钟频率。最终在前、后端仿真中可满足2 GHz和1.7GHz的时钟约束，频率分辨率为16 bits，最大杂散分量(SFDR)稳定在100 dBc，而功耗为23.4 mW。在高速DDS电路中，本设计的功耗和频谱纯度均达到领先水平。关键词：
+<br><br>
+<span style="margin-left:25px"></span>数控振荡器；DDS；混合结构；超高速；高精度；低功耗ABSTRACTNumericallyControlled Oscillator(NCO) isatypeoffrequencysynthesizercontrolledbydigitsignals.
+<br><br>
+<span style="margin-left:25px"></span> Onemethod to implement all- digital NCOis Direct Digital Synthesizer( DDS)， which have superior advantages in fine resolution， small tuning latency and wide range of frequency. DDS have a broad application prospect in wireless communication. Unfortunately， there is a significant problemofconventional DDS structure，for using LUT. Many researchers have been working on DDS architectureof the last few decades， leading performance of DDS continuously improving.This paper implemented an ultra-high-speed and high-resolution NCO design and simulation， using Direct Digital Synthesizer method.
+<br><br>
+<span style="margin-left:25px"></span> This paper proposed a mix structure called ROM-CORDIC， which cut half of the address of LUT with no noise increased in output. Besides the reasonable allocation of resource of DDS， pipeline accelerates system clock frequency. In the final， this circuit design of DDS could satisfy timing requirements of2.0 GHz and1.7 GHz， in front- end and back- end simulations. The DDS s frequency resolution is16 bits， and it achieved100 dBc of SFDR with23.4 mW of power， which is aleadingwork in high- speed DDSarea.Keywords:
+<br><br>
+<span style="margin-left:25px"></span>NCO; DDS; Mix structure; Ultra-high- speed;High-resolution; Low power consumption目录中文摘要I
+<br><br>
+<span style="margin-left:25px"></span>ABSTRACTII
+<br><br>
+<span style="margin-left:25px"></span>目录III
+<br><br>
+<span style="margin-left:25px"></span>第1章引言1
+<br><br>
+<span style="margin-left:25px"></span>1.1 研究背景1
+<br><br>
+<span style="margin-left:25px"></span>1.2 主要评价指标1
+<br><br>
+<span style="margin-left:25px"></span>1.3 研究现状2
+<br><br>
+<span style="margin-left:25px"></span>1.3.1锁相环式(PLL)频率综合2
+<br><br>
+<span style="margin-left:25px"></span>1.3.2直接数字式频率综合(DDS)3
+<br><br>
+<span style="margin-left:25px"></span>1.3.3 DDS近年工作3
+<br><br>
+<span style="margin-left:25px"></span>1.4 论文主要工作4
+<br><br>
+<span style="margin-left:25px"></span>第2章直接数字式频率综合(DDS)原理6
+<br><br>
+<span style="margin-left:25px"></span>2.1 DDS的原理和框架6
+<br><br>
+<span style="margin-left:25px"></span>2.2 查找表压缩技术8
+<br><br>
+<span style="margin-left:25px"></span>2.2.1对称性方法8
+<br><br>
+<span style="margin-left:25px"></span>2.2.2引入近似结构9
+<br><br>
+<span style="margin-left:25px"></span>2.3 角度旋转方法介绍10
+<br><br>
+<span style="margin-left:25px"></span>2.3.1 CORDIC算法原理11
+<br><br>
+<span style="margin-left:25px"></span>2.3.2混合结构12
+<br><br>
+<span style="margin-left:25px"></span>2.3.3改进算法13
+<br><br>
+<span style="margin-left:25px"></span>2.4 DDS的频谱特性和误差来源14
+<br><br>
+<span style="margin-left:25px"></span>2.4.1频谱分析14
+<br><br>
+<span style="margin-left:25px"></span>2.4.2噪声来源分析15
+<br><br>
+<span style="margin-left:25px"></span>第3章基于直接数字式的振荡器设计18
+<br><br>
+<span style="margin-left:25px"></span>3.1 ROM-CORDIC 混合结构设计18
+<br><br>
+<span style="margin-left:25px"></span>3.1.1相位累加器(PA)设计19
+<br><br>
+<span style="margin-left:25px"></span>3.1.2相位压缩器(PC)设计19
+<br><br>
+<span style="margin-left:25px"></span>3.1.3相位幅度转换器(PAC)设计20
+<br><br>
+<span style="margin-left:25px"></span>3.2 资源配置分析21
+<br><br>
+<span style="margin-left:25px"></span>3.3 流水线设计22
+<br><br>
+<span style="margin-left:25px"></span>第4章数控振荡器实现和仿真24
+<br><br>
+<span style="margin-left:25px"></span>4.1 功能性仿真平台搭建24
+<br><br>
+<span style="margin-left:25px"></span>4.1.1 MATLAB数值计算平台仿真24
+<br><br>
+<span style="margin-left:25px"></span>4.1.2 modelsim仿真平台搭建26
+<br><br>
+<span style="margin-left:25px"></span>4.2 关键路径优化方法26
+<br><br>
+<span style="margin-left:25px"></span>4.2.1电路结构规范26
+<br><br>
+<span style="margin-left:25px"></span>4.2.2关键模块重新设计28
+<br><br>
+<span style="margin-left:25px"></span>4.3 时序仿真结果28
+<br><br>
+<span style="margin-left:25px"></span>4.3.1工具介绍28
+<br><br>
+<span style="margin-left:25px"></span>4.3.2结果展示28
+<br><br>
+<span style="margin-left:25px"></span>4.4 性能比较31
+<br><br>
+<span style="margin-left:25px"></span>第5章结论32
+<br><br>
+<span style="margin-left:25px"></span>5.1 主要工作总结32
+<br><br>
+<span style="margin-left:25px"></span>5.2 未来工作展望32
+<br><br>
+<span style="margin-left:25px"></span>插图索引33
+<br><br>
+<span style="margin-left:25px"></span>表格索引34
+<br><br>
+<span style="margin-left:25px"></span>参考文献35
+<br><br>
+<span style="margin-left:25px"></span>致谢37
+<br><br>
+<span style="margin-left:25px"></span>附录A 外文资料调研阅读报告或书面翻译38
+<br><br>
+<span style="margin-left:25px"></span>引言
+<br><br>
+<span style="margin-left:25px"></span>研究背景
+<br><br>
+<span style="margin-left:25px"></span>当今时代，无线通信系统正在全球急速扩展，生活中方方面面都离不开无线网络、蜂窝信号。
+<br><br>
+<span style="margin-left:25px"></span>新的应用如雨后春笋版出现，基于毫米波的5G移动网络正从实验室走向生活，但是这也对无线系统提出了更高的要求。在工业、军事领域，新型的武器、雷达也依赖于高精度的无线信号。作为系统中的信号源，实现高速、高精度、快切换、低功耗的频率合成器已经迫在眉睫。信号合成技术已有数十年的发展，最初的振荡器由晶振和滤波器构成，但是鉴于其巨大的功耗、体积以及糟糕的精度，很难实用。
+<br><br>
+<span style="margin-left:25px"></span>而数控振荡器利用高精度的数字信号输入，在可控性以及精度得到了巨大提高。数控振荡器分主要分为两类：
+<br><br>
+<span style="margin-left:25px"></span>一类是利用锁相环跟踪参考信号，生成指定频率的输出信号；另一类是直接数字合成式，通过相位直接映射成正弦幅度。下面将介绍两种方法的技术特点。主要评价指标
+<br><br>
+<span style="margin-left:25px"></span>1) 信噪比(SNR)
+<br><br>
+<span style="margin-left:25px"></span>信噪比是信号处理领域的主要评价指标，用于描述信号和噪声能量比值。
+<br><br>
+<span style="margin-left:25px"></span>对于NCO而言，即中心频率能量和非中心频率能量之比。图1.1信号中的底噪和杂散
+<br><br>
+<span style="margin-left:25px"></span>SNR的数值计算如公式(1-1)。
+<br><br>
+<span style="margin-left:25px"></span>在NCO的设计中，SNR主要用于衡量底噪的大小，图1.1的(a)图显示了输出频谱中的底噪。SNR=10
+<br><br>
+<span style="margin-left:25px"></span>log
+<br><br>
+<span style="margin-left:25px"></span>10
+<br><br>
+<span style="margin-left:25px"></span>信号
+<br><br>
+<span style="margin-left:25px"></span>噪声
+<br><br>
+<span style="margin-left:25px"></span>)(11)
+<br><br>
+<span style="margin-left:25px"></span>2)最大杂散分量(SFDR)
+<br><br>
+<span style="margin-left:25px"></span>对于正余弦信号，不仅要降低总噪声的能量占比，减少信号中有色噪声也非常重要，因此使用SFDR用于评价输出的杂散性能。
+<br><br>
+<span style="margin-left:25px"></span>SFDR的定义为基频信号和最大杂散信号的能量之比。SFDR=10
+<br><br>
+<span style="margin-left:25px"></span>log
+<br><br>
+<span style="margin-left:25px"></span>10
+<br><br>
+<span style="margin-left:25px"></span>基频
+<br><br>
+<span style="margin-left:25px"></span>最大杂散
+<br><br>
+<span style="margin-left:25px"></span>参考图1.1的(b)图，在底噪同样较小的情况下，(b)中的杂散对输出性能起到了主要影响。
+<br><br>
+<span style="margin-left:25px"></span>频率合成领域更重视高次谐波的消除，因此SFDR指标的重要性一般要高于SNR。研究现状
+<br><br>
+<span style="margin-left:25px"></span>数控振荡器分主要分为两类：
+<br><br>
+<span style="margin-left:25px"></span>一类是利用锁相环跟踪参考信号，生成指定频率的输出信号；另一类是直接数字式，通过数字相位直接映射成正弦幅度。下面将介绍两种方法的技术特点。最后介绍近年DDS的主要发展。锁相环式(PLL)频率综合
+<br><br>
+<span style="margin-left:25px"></span>图1.2锁相环式频率综合原理
+<br><br>
+<span style="margin-left:25px"></span>锁相环式频率综合技术，又称间接频率综合。
+<br><br>
+<span style="margin-left:25px"></span>如图1.2所示，锁相环由鉴相器，环路滤波器，压控振荡器，分频器构成负反馈环路[1]。其原理是通过分频信号对参考信号进行相位跟踪，环路滤波后经压控振荡器放大输出，将生成倍频的输出信号。改变分频器的分频倍数n，即可控制输出正弦波频率
+<br><br>
+<span style="margin-left:25px"></span>这种频率合成器的结构成熟且对功耗要求不高，输出信号的杂散性能较好。
+<br><br>
+<span style="margin-left:25px"></span>数字分数锁相环[2]的出现使其各项性能获得大幅提高，成为现今信号发生器的主流选择。直接数字式频率综合(DDS)
+<br><br>
+<span style="margin-left:25px"></span>DDS[3]的思路是从相位角度出发，将相位直接转化成波形，其基本结构分三块：
+<br><br>
+<span style="margin-left:25px"></span>相位累加器(PA)，相位-幅度转换器(PAC)，数模转换器(DAC)，如图1.3所示。各模块的承担的工作如下：1）相位累加器用于计算信号相位
+<br><br>
+<span style="margin-left:25px"></span>2）相位-幅度转换器将相位映射成非线性波形f()
+<br><br>
+<span style="margin-left:25px"></span>3）数模转换器将波形f()转换成模拟信号，低通滤波后输出。
+<br><br>
+<span style="margin-left:25px"></span>图1.3 DDS基本结构
+<br><br>
+<span style="margin-left:25px"></span>由于杂散性能过剩，通常还会在系统中对相位进行压缩，以减小PAC的复杂度。
+<br><br>
+<span style="margin-left:25px"></span>DDS在捷变性能和频率分辨率上相比锁相环式有巨大的优势，最大杂散分量可以达到120 dBc[4]以上。DDS的主要问题是时钟频率相对比较慢，但是在大规模集成电路(VLSI)迅速发展的背景下，DDS的时钟频率也在不断提高。随着高精度信号源的需求增大，不断有新领域开始使用DDS作为信号源。DDS近年工作
+<br><br>
+<span style="margin-left:25px"></span>随着CMOS集成电路的成熟，DDS于1971年被Tierneyet al[2]提出，核心观点是用ROM查表得到波形。
+<br><br>
+<span style="margin-left:25px"></span>这种方法在精度、捷变性能上相比其他频率合成器有突出的优势。但过大的ROM导致了面积偏大、速度较慢等问题。在90年代，经过的多位学者的改进，引入了相位压缩的方法，以Sunderland[5]，Nicholas[6]为代表。
+<br><br>
+<span style="margin-left:25px"></span>其工作均利用高阶近似条件，实现了查找表多个数量级的减少，加快了DDS的时钟频率。随后又有研究者开始使用线性插值[7]、非线性插值[8]、非均匀差值[9]等方法，使得查找表大小进一步减小。由于查找表压缩方法的增益收紧，研究者开始使用角度旋转替代查表方法。
+<br><br>
+<span style="margin-left:25px"></span>CORDIC算法[10]是支撑角度旋转的经典算法，通过多级移位、加法操作即可实现角度的旋转。查表方法的问题是ROM大小和地址长度呈指数关系，而角度旋转的优势是资源随相位位数线性增长。角度旋转法的主要优点是SFDR可以达到很高[4]，因为要进行加法计算，速度相比而言会比较慢一点。近年来，使用非线性DAC实现PAC成为主流[11，12]，这种方法把PAC数字域的操作转移至DAC中完成。
+<br><br>
+<span style="margin-left:25px"></span>相比之前的工作，使用非线性DAC在面积、功耗上取得进步，速度上也有一定的提升。但是引入了DAC设计中的新问题。表1.1近年代表性工作
+<br><br>
+<span style="margin-left:25px"></span>DDS结构
+<br><br>
+<span style="margin-left:25px"></span>年份
+<br><br>
+<span style="margin-left:25px"></span>工艺
+<br><br>
+<span style="margin-left:25px"></span>时钟频率
+<br><br>
+<span style="margin-left:25px"></span>SFDR
+<br><br>
+<span style="margin-left:25px"></span>功耗
+<br><br>
+<span style="margin-left:25px"></span>Nicholas[6]
+<br><br>
+<span style="margin-left:25px"></span>1998
+<br><br>
+<span style="margin-left:25px"></span>0.8 um
+<br><br>
+<span style="margin-left:25px"></span>150 MHz
+<br><br>
+<span style="margin-left:25px"></span>52 dBc
+<br><br>
+<span style="margin-left:25px"></span>0.5 W
+<br><br>
+<span style="margin-left:25px"></span>非线性内插[8]
+<br><br>
+<span style="margin-left:25px"></span>2010
+<br><br>
+<span style="margin-left:25px"></span>0.13 um
+<br><br>
+<span style="margin-left:25px"></span>1.0 GHz
+<br><br>
+<span style="margin-left:25px"></span>63 dBc
+<br><br>
+<span style="margin-left:25px"></span>8.2 mW
+<br><br>
+<span style="margin-left:25px"></span>角度旋转[13]
+<br><br>
+<span style="margin-left:25px"></span>2011
+<br><br>
+<span style="margin-left:25px"></span>0.18 um
+<br><br>
+<span style="margin-left:25px"></span>260 MHz
+<br><br>
+<span style="margin-left:25px"></span>113 dBc
+<br><br>
+<span style="margin-left:25px"></span>16.5 mW
+<br><br>
+<span style="margin-left:25px"></span>非线性DAC[12]
+<br><br>
+<span style="margin-left:25px"></span>2015
+<br><br>
+<span style="margin-left:25px"></span>55 nm
+<br><br>
+<span style="margin-left:25px"></span>2.0 GHz
+<br><br>
+<span style="margin-left:25px"></span>55 dBc
+<br><br>
+<span style="margin-left:25px"></span>130 mW
+<br><br>
+<span style="margin-left:25px"></span>表1.1展示了近20年不同DDS结构的代表性工作。
+<br><br>
+<span style="margin-left:25px"></span>在结构创新、工艺升级的推动下，DDS在时钟频率、SFDR、功耗三项主要指标上都取得实质性进步。论文主要工作
+<br><br>
+<span style="margin-left:25px"></span>在对频率综合技术深入的研究后，结合毕业设计的实际需求、任务挑战度，本文决定使用直接数字合成(DDS)方法实现数控振荡器。
+<br><br>
+<span style="margin-left:25px"></span>为了设计出超高速、高精度直接数字式频率合成器(DDS)，毕设的研究目标有一下三点：（1）提升输出信号的杂散性能
+<br><br>
+<span style="margin-left:25px"></span>（2）提高系统的最快时钟频率
+<br><br>
+<span style="margin-left:25px"></span>（3）降低系统的功耗、面积
+<br><br>
+<span style="margin-left:25px"></span>本文主要使用查表法和角度旋转法结合的方案，主要工作按5点展开：
+<br><br>
+<span style="margin-left:25px"></span>（1）调研基于查表法和角度旋转法实现的DDS，了解其原理、特点。
+<br><br>
+<span style="margin-left:25px"></span>（2）研究DDS的基本构成，建立数学模型并在MATLAB上仿真输出波形
+<br><br>
+<span style="margin-left:25px"></span>（3）分析DDS的噪声来源，在理论和电路上研究噪声的抑制方法。
+<br><br>
+<span style="margin-left:25px"></span>（4）结合查表法和角度旋转提出新结构，在速度、精度上取得更好结果。
+<br><br>
+<span style="margin-left:25px"></span>（5）完成RTL级代码编写和波形仿真，进行综合以及布局布线
+<br><br>
+<span style="margin-left:25px"></span>在论文的组织安排上：
+<br><br>
+<span style="margin-left:25px"></span>第一章介绍数控振荡器在重要意义，频率合成技术的两种方法，以及直接数字式频率合成器(DDS)的发展历程，规划了论文的主要工作；
+<br><br>
+<span style="margin-left:25px"></span>第二章将详细描述DDS的技术原理、基本框架，介绍查找表压缩和角度旋转两种优化方法，提出了改进的算法，最后对误差来源进行分析；
+<br><br>
+<span style="margin-left:25px"></span>第三章提出了改进的电路结构，分别介绍各电路模块的设计思想，配置资源策略，以及流水线在本设计的实现；
+<br><br>
+<span style="margin-left:25px"></span>第四章主要是展示实验过程和仿真的结果，包括仿真平台搭建以及实验中总结的优化经验，最后展示时序仿真结果，并与其他论文进行结果比较；
+<br><br>
+<span style="margin-left:25px"></span>第五章对毕业设计的工作进行简要的总结，对各项结果给予结论，并且探究改设计未来的修改方向以及介绍数控振荡器的发展趋势。
+<br><br>
+<span style="margin-left:25px"></span>直接数字式频率综合(DDS)原理
+<br><br>
+<span style="margin-left:25px"></span>直接频率合成器是一种典型的数字电路系统，是实现数控振荡器的重要方法。
+<br><br>
+<span style="margin-left:25px"></span>随着近年来DDS性能的稳步提升，学术界对DDS技术的研究仍比较活跃，因此介绍清楚DDS的基本原理很有必要性。本章将首先DDS传统结构，建立其数学模型；第二、三节介绍查找表压缩、角度旋转两种方法，用于优化系统的杂散性能和时钟频率；第四节详细分析DDS输出的频谱特性，并说明系统中噪声的来源。DDS的原理和框架
+<br><br>
+<span style="margin-left:25px"></span>上世纪70年代，信号发生器的主流仍是利用锁相环（PLL）进行模拟信号的跟踪。
+<br><br>
+<span style="margin-left:25px"></span>由于大规模集成电路的出现，Tierney et al[3]于1971年提出直接数字合成方法，希望利用相位直接映射到指定波形。DDS的传统结构，如图1.3所示，其核心有三个部分，生成相位的累加器（PA），查表输出波形的相位-幅度转换器（PAC），以及低通的数模转换器（DAC）输出。DDS系统输入为频率控制字(fcw)和相位控制字(pcw)，均为N位，输出正弦信号如公式(2-1)。
+<br><br>
+<span style="margin-left:25px"></span>其中fcw用于控制输出频率，pcw用于设定初始相位
+<br><br>
+<span style="margin-left:25px"></span>=sin(2
+<br><br>
+<span style="margin-left:25px"></span>t+
+<br><br>
+<span style="margin-left:25px"></span>)(21)
+<br><br>
+<span style="margin-left:25px"></span>公式(2-1)为连续时间表达式，离散时间表达式为(2-2)，其中
+<br><br>
+<span style="margin-left:25px"></span>是时钟周期。
+<br><br>
+<span style="margin-left:25px"></span>为离散时间的正则化相位，表达式如公式(2-3)
+<br><br>
+<span style="margin-left:25px"></span>=sin(2
+<br><br>
+<span style="margin-left:25px"></span>)(22) 
+<br><br>
+<span style="margin-left:25px"></span>= fcwn+
+<br><br>
+<span style="margin-left:25px"></span>cw
+<br><br>
+<span style="margin-left:25px"></span>(23)
+<br><br>
+<span style="margin-left:25px"></span>输出信号的频率
+<br><br>
+<span style="margin-left:25px"></span>如公式(2-4)，其中N是累加器的计算位数。
+<br><br>
+<span style="margin-left:25px"></span>由于在全相位空间上采样，根据奈奎斯特采样定律，离散采样频率至少为原信号带宽的两倍才能无混叠还原信号，因此对fcw的最大值有限制。同时表明输出的频率最高能达到系统时钟频率的一半。
+<br><br>
+<span style="margin-left:25px"></span>=fcw
+<br><br>
+<span style="margin-left:25px"></span>fcw[
+<br><br>
+<span style="margin-left:25px"></span>(24)
+<br><br>
+<span style="margin-left:25px"></span>公式(2-3)表明，正则相位
+<br><br>
+<span style="margin-left:25px"></span>以固定增量fcw增长，通过累加操作可实现相位计算。
+<br><br>
+<span style="margin-left:25px"></span>由于是通过累加操作获得，在fcw抖动时也能保证了相位的连续性，规避了因相位不连续产生的高频噪声。公式(2-5)显示了输出频率的最小变化量，增加累加器位数N就可以实现非常高的频率分辨率。(25)
+<br><br>
+<span style="margin-left:25px"></span>在系统框图2.1中，使用相位累加器(PA)计算正则相位。
+<br><br>
+<span style="margin-left:25px"></span>PA由加法器和寄存器构成。加法器输入一端为fcw，另一端与寄存器相连，加法结果则在下一时钟上升沿写入寄存器。相位生成后，下一步是将其映射到正弦幅度上。相位-幅度转换器(PAC)是DDS中最为重要的设计，其实现对系统性能的影响最大。
+<br><br>
+<span style="margin-left:25px"></span>使用查找表进行相位-幅度转换是最常见的方式，通过记录所有相位对应的幅度值，实现非线性函数sin(2t+
+<br><br>
+<span style="margin-left:25px"></span>)的映射。
+<br><br>
+<span style="margin-left:25px"></span>LUT
+<br><br>
+<span style="margin-left:25px"></span>=f
+<br><br>
+<span style="margin-left:25px"></span>=f(t)
+<br><br>
+<span style="margin-left:25px"></span>=n
+<br><br>
+<span style="margin-left:25px"></span>(26)
+<br><br>
+<span style="margin-left:25px"></span>查表法的一个显著优点是实现简单，使用ROM即可完成相位-幅度的转换，在低精度要求下也可以达到较快的速度。
+<br><br>
+<span style="margin-left:25px"></span>但是当精度要求较高时，查表法必须要面临精度和速度的取舍问题。为了在全相位空间寻址，查找表的大小如公式(2-7)，其中M为输出量化位数。根据公式(2-7)，LUT的大小随N指数增长。每提升1bit相位比特数，表的大小都要翻一倍，这将急剧增加ROM的读取开销和面积开销。意味着高分辨率的DDS必须要在时钟频率上让步。size of LUT=
+<br><br>
+<span style="margin-left:25px"></span>M(27)
+<br><br>
+<span style="margin-left:25px"></span>系统最后通过DAC将数字信号转换为模拟信号。
+<br><br>
+<span style="margin-left:25px"></span>如图2.1所示，在满足奈奎斯特采样定律下，数字信号包含了模拟信号所有的频域信息。图2.1模拟、数字信号频域示意图
+<br><br>
+<span style="margin-left:25px"></span>观察图1.3，D/A转换后波形还存在明显的阶梯效应。
+<br><br>
+<span style="margin-left:25px"></span>这是由于在时间离散信号f相当于在时间连续信号f(t)上采样，因此f
+<br><br>
+<span style="margin-left:25px"></span>相在DTFT上当于对连续信号f(t)进行周期性重叠，表达式如(2-8)所示。
+<br><br>
+<span style="margin-left:25px"></span>因此使用低通滤波器LPF实现f到f(t)的转换。
+<br><br>
+<span style="margin-left:25px"></span>j(
+<br><br>
+<span style="margin-left:25px"></span>(28)
+<br><br>
+<span style="margin-left:25px"></span>查找表压缩技术
+<br><br>
+<span style="margin-left:25px"></span>从本章首节的理论中，DDS面临的主要问题是高分辨率和时钟频率的矛盾。
+<br><br>
+<span style="margin-left:25px"></span>要提升系统的速度，关键是提升ROM的访存速度。在实现工艺确定的情况下，一个提升ROM性能的方法是减少其地址的长度，即压缩相位。对称性方法
+<br><br>
+<span style="margin-left:25px"></span>在文献[5]中，提出了/2压缩方法。
+<br><br>
+<span style="margin-left:25px"></span>其思想是使用地址的后N-2位信息在第一象限查表，前2位用于将查表向量翻转至原有象限。任意向量均可在第一象限水平、竖直翻转至原有向量。该方法能有效减少ROM地址长度2位，使得查找表数据减少为原来的1/4。更进一步的是/4压缩方法[14]考虑到正、余弦函数的对称性，只需要使用后N-3位信息在(0， /4)区间同时查找正、余弦函数值。相比而言，/4压缩方法存储数据量相同但是查表地址减少了一位。引入近似结构
+<br><br>
+<span style="margin-left:25px"></span>除利用对称性压缩相位，coarse-fine结构[5]也是减小查找表大小的经典方法，如图2.2所示。
+<br><br>
+<span style="margin-left:25px"></span>图2.2coarse-fine查找表结构
+<br><br>
+<span style="margin-left:25px"></span>将相位划分成A，B，C三个部分。
+<br><br>
+<span style="margin-left:25px"></span>根据公式(2-9)，(2-10)对公式近似，可建立 coarse， fine两个表，分别记录 sin( A+ B)和 cos( A) sin( C)的值，最后将两项相加则得到近似的正弦信号。图2.3相位划分示意图
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>A+B+C
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>+cos()sin()(29)
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>A+B+C
+<br><br>
+<span style="margin-left:25px"></span>coarse
+<br><br>
+<span style="margin-left:25px"></span>A，B
+<br><br>
+<span style="margin-left:25px"></span>+fine(A，C)(210)
+<br><br>
+<span style="margin-left:25px"></span>coarse-fine结构是分治法在电路设计中的体现。
+<br><br>
+<span style="margin-left:25px"></span>利用ROM大小随地址长度指数下降特点，分而治之可以从中获得收益。但仍需讨论近似的误差，当约束条件满足时，地址最多可减少为原有长度的2/3。类似于coarse-fine结构，还有线性插值法[7]、二次插值法[8]均对查找表进行更高比例的压缩，一定程度上提升了DDS速度、功耗性能。
+<br><br>
+<span style="margin-left:25px"></span>表2.1比较了各方法的压缩比例和额外计算量表2.1查找表压缩方法比较
+<br><br>
+<span style="margin-left:25px"></span>压缩方法
+<br><br>
+<span style="margin-left:25px"></span>地址长度变化
+<br><br>
+<span style="margin-left:25px"></span>额外的计算
+<br><br>
+<span style="margin-left:25px"></span>coarse-fine
+<br><br>
+<span style="margin-left:25px"></span>2/3
+<br><br>
+<span style="margin-left:25px"></span>加法操作
+<br><br>
+<span style="margin-left:25px"></span>线性插值
+<br><br>
+<span style="margin-left:25px"></span>1/2
+<br><br>
+<span style="margin-left:25px"></span>乘法操作
+<br><br>
+<span style="margin-left:25px"></span>二次插值
+<br><br>
+<span style="margin-left:25px"></span>1/3
+<br><br>
+<span style="margin-left:25px"></span>平方操作
+<br><br>
+<span style="margin-left:25px"></span>经总结，查找表压缩方法实际上是将查表复杂度转化为计算复杂度。
+<br><br>
+<span style="margin-left:25px"></span>因此查找复杂度的减少和计算复杂度的增加存在一个临界点，越过临界点后继续压缩查找表反而会增加总的时间复杂度。这将限制查找表的压缩程度。图2.4压缩度-复杂度示意图
+<br><br>
+<span style="margin-left:25px"></span>角度旋转方法介绍
+<br><br>
+<span style="margin-left:25px"></span>上一节介绍了查找表压缩方法，在最后总结中提到了查找表压缩的限制。
+<br><br>
+<span style="margin-left:25px"></span>为了突破查找表的结构的局限性，Grayver [15]在1995年提出使用角度旋转的方法实现相位-幅度转换。角度旋转的思路是利用多次旋转操作逼近真实相位，而旋转操作不需要查找表，因而避免了以上查找表的缺点。基于CORDIC算法的角度旋转方法不需要查找表结构，并且可以使用流水线进行加速。
+<br><br>
+<span style="margin-left:25px"></span>但是CORDIC算法的缺点是流水级数太长，导致捷变性能严重下降。之后的两节将具体介绍算法的原理及改进。CORDIC算法原理
+<br><br>
+<span style="margin-left:25px"></span>CORDIC算法[10]是实现双曲函数族的一种算法，而三角函数是双曲函数在虚平面的一种特例。
+<br><br>
+<span style="margin-left:25px"></span>在许多论文[11]中已经对其原理进行了详细的推导，因此本文只会简单介绍生成三角函数的CORDIC算法。对于向量
+<br><br>
+<span style="margin-left:25px"></span>=(
+<br><br>
+<span style="margin-left:25px"></span>)，对
+<br><br>
+<span style="margin-left:25px"></span>绕原点旋转角后得到
+<br><br>
+<span style="margin-left:25px"></span>= (
+<br><br>
+<span style="margin-left:25px"></span>)，如图2.5所示，其变换表达式如(2-11)。
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>(211)
+<br><br>
+<span style="margin-left:25px"></span>图2.5角度旋转示意图
+<br><br>
+<span style="margin-left:25px"></span>角度可使用一组正交基(
+<br><br>
+<span style="margin-left:25px"></span>，，
+<br><br>
+<span style="margin-left:25px"></span>)表示，其中正交基
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>，则在正交空间的坐标为
+<br><br>
+<span style="margin-left:25px"></span>，，
+<br><br>
+<span style="margin-left:25px"></span>，，
+<br><br>
+<span style="margin-left:25px"></span>，，
+<br><br>
+<span style="margin-left:25px"></span>=0
+<br><br>
+<span style="margin-left:25px"></span>(212)
+<br><br>
+<span style="margin-left:25px"></span>则公式(2-11)可重新表述为(2-13)。
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>=0
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>=0
+<br><br>
+<span style="margin-left:25px"></span>(213)
+<br><br>
+<span style="margin-left:25px"></span>进一步得到(2-14)，其中=
+<br><br>
+<span style="margin-left:25px"></span>=0
+<br><br>
+<span style="margin-left:25px"></span>=0
+<br><br>
+<span style="margin-left:25px"></span>tan(
+<br><br>
+<span style="margin-left:25px"></span>tan(
+<br><br>
+<span style="margin-left:25px"></span>(214)
+<br><br>
+<span style="margin-left:25px"></span>代入
+<br><br>
+<span style="margin-left:25px"></span>tan
+<br><br>
+<span style="margin-left:25px"></span>得到迭代公式(2-15)，(2-16)。
+<br><br>
+<span style="margin-left:25px"></span>从迭代公式(2-14)可以看出，矩阵操作只需要移位和加法操作，在硬件中用加法器即可实现。算法通过公式(2-17)计算正交空间坐标，，
+<br><br>
+<span style="margin-left:25px"></span>（2-17）使用了减法操作以及判断操作，故需要额外使用全加器和判断逻辑计算坐标。
+<br><br>
+<span style="margin-left:25px"></span>1）迭代公式：
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>(215)
+<br><br>
+<span style="margin-left:25px"></span>2）初值、末值：
+<br><br>
+<span style="margin-left:25px"></span>(216)
+<br><br>
+<span style="margin-left:25px"></span>3）正交空间坐标
+<br><br>
+<span style="margin-left:25px"></span>，，
+<br><br>
+<span style="margin-left:25px"></span>N-1
+<br><br>
+<span style="margin-left:25px"></span>计算：
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>]0
+<br><br>
+<span style="margin-left:25px"></span>1:
+<br><br>
+<span style="margin-left:25px"></span>(217)
+<br><br>
+<span style="margin-left:25px"></span>根据之前的分析，可以得到CORDIC算法的电路框图如下：
+<br><br>
+<span style="margin-left:25px"></span>图2.6 CORDIC算法电路框图[17]
+<br><br>
+<span style="margin-left:25px"></span>混合结构
+<br><br>
+<span style="margin-left:25px"></span>传统CORDIC算法的主要优点是通过迭代计算，避免使用了查找表，并且可以使用流水线加速。
+<br><br>
+<span style="margin-left:25px"></span>但是相比查找表法，CORDIC算法存在计算量大，流水级数长，占用资源多的情况。为了提升角度旋转方法的性能，出现了查找表和CORDIC算法结合的方法。
+<br><br>
+<span style="margin-left:25px"></span>混合方法分两步，首先使用查找表得到粗分辨率幅度=(
+<br><br>
+<span style="margin-left:25px"></span>)，再通过角度旋转得到细分辨率幅度
+<br><br>
+<span style="margin-left:25px"></span>= (
+<br><br>
+<span style="margin-left:25px"></span>)。
+<br><br>
+<span style="margin-left:25px"></span>正交基取为
+<br><br>
+<span style="margin-left:25px"></span>此处
+<br><br>
+<span style="margin-left:25px"></span>是和原始算法之间呈1/4关系，则公式(2-14)需修改为(2-18)。
+<br><br>
+<span style="margin-left:25px"></span>此时，相比传统CORDIC方法中多次迭代判断和加法操作，
+<br><br>
+<span style="margin-left:25px"></span>的求解的计算量大大减小了。
+<br><br>
+<span style="margin-left:25px"></span>=M
+<br><br>
+<span style="margin-left:25px"></span>tan(
+<br><br>
+<span style="margin-left:25px"></span>tan(
+<br><br>
+<span style="margin-left:25px"></span>(218)
+<br><br>
+<span style="margin-left:25px"></span>考虑到近似条件
+<br><br>
+<span style="margin-left:25px"></span>10
+<br><br>
+<span style="margin-left:25px"></span>，可使用一阶近似条件得到公式(2-20)。
+<br><br>
+<span style="margin-left:25px"></span>=M
+<br><br>
+<span style="margin-left:25px"></span>(219)
+<br><br>
+<span style="margin-left:25px"></span>改进算法
+<br><br>
+<span style="margin-left:25px"></span>观察公式(2-20)，旋转角度的计算中有1/4的乘法运算，这将极大降低迭代运算的速度。
+<br><br>
+<span style="margin-left:25px"></span>为了解决此问题，文献[13， 17]均在查找表中额外保存了数据，通过查找操作替代乘法操作，减少了角度旋转的计算复杂度。顺应该思路，在本节提出了改进的算法，同样使用混合结构。利用近似条件代入(2-13)中获得新表达式(2-21)，其中
+<br><br>
+<span style="margin-left:25px"></span>计算和(2-19)相同。
+<br><br>
+<span style="margin-left:25px"></span>注意(2-13)中cos
+<br><br>
+<span style="margin-left:25px"></span>/4
+<br><br>
+<span style="margin-left:25px"></span>=M+1
+<br><br>
+<span style="margin-left:25px"></span>已趋近于1，因此在(2-21)中被替换成常数T。
+<br><br>
+<span style="margin-left:25px"></span>/4
+<br><br>
+<span style="margin-left:25px"></span>=M+1
+<br><br>
+<span style="margin-left:25px"></span>/4
+<br><br>
+<span style="margin-left:25px"></span>=M+1
+<br><br>
+<span style="margin-left:25px"></span>(220)
+<br><br>
+<span style="margin-left:25px"></span>为消除公式(2-20)中1/4乘法运算，使用文献[17]的方法，在查找表中保存
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>/4和
+<br><br>
+<span style="margin-left:25px"></span>sin
+<br><br>
+<span style="margin-left:25px"></span>/4两个新变量，代入到公式(2-21)中，得到迭代公式如(2-22)，
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>(221)
+<br><br>
+<span style="margin-left:25px"></span>另外一点需要注意的是溢出现象。
+<br><br>
+<span style="margin-left:25px"></span>由于移位操作的截断效应，公式(2-22)在局部会略微超过1。通过对常数T的约束(2-23)可以避免溢出的出现。T=
+<br><br>
+<span style="margin-left:25px"></span>min
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>=M+1
+<br><br>
+<span style="margin-left:25px"></span>=cos(
+<br><br>
+<span style="margin-left:25px"></span>(2
+<br><br>
+<span style="margin-left:25px"></span>))(222)
+<br><br>
+<span style="margin-left:25px"></span>DDS的频谱特性和误差来源
+<br><br>
+<span style="margin-left:25px"></span>频谱分析
+<br><br>
+<span style="margin-left:25px"></span>对于理想情况，不考虑任何噪声以及输出量化，DDS输出out如公式(2-23)。
+<br><br>
+<span style="margin-left:25px"></span>对输出out进行N点FFT得到频谱如图2.7。out(n)=cos(2fcwn)(223)
+<br><br>
+<span style="margin-left:25px"></span>图2.7理想输出信号频谱
+<br><br>
+<span style="margin-left:25px"></span>从频谱图中可以看出，消除了矩形窗产生的频谱泄漏后，频域的能量主要集中在中心频率附近。
+<br><br>
+<span style="margin-left:25px"></span>但是现实情况中，为了简化PAC的规模，需要对正则相位进行截断，产生了相位截断误差，加上输出量化和中间过程的近似产生的误差，使得信号成为非理想信号。图2.8展示了非理想情况下输出的频谱，在频率、相位位数相同的情况下，不仅信号的底噪提升了，而且频域上形成了周期性的spurs和多次谐波。
+<br><br>
+<span style="margin-left:25px"></span>图2.8非理想输出信号频谱
+<br><br>
+<span style="margin-left:25px"></span>噪声来源分析
+<br><br>
+<span style="margin-left:25px"></span>1)相位截断误差
+<br><br>
+<span style="margin-left:25px"></span>对于一个N位的相位，在传往PAC之前可能会截断成P位，截断误差为
+<br><br>
+<span style="margin-left:25px"></span>，则表达式(2-23)修正为(2-24)。
+<br><br>
+<span style="margin-left:25px"></span>由近似公式可得，截断误差传导至输出的噪声=2
+<br><br>
+<span style="margin-left:25px"></span>sin(2)。
+<br><br>
+<span style="margin-left:25px"></span>out
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>+2
+<br><br>
+<span style="margin-left:25px"></span>sin(2)(224)
+<br><br>
+<span style="margin-left:25px"></span>由于系统在相位空间上采样，对应的
+<br><br>
+<span style="margin-left:25px"></span>也可看作截断误差分布图2.9(a)图上采样，(b)图显示其频域为周期性线谱。
+<br><br>
+<span style="margin-left:25px"></span>由DFT理论可知，的频谱是截断误差分布频谱的平移叠加。
+<br><br>
+<span style="margin-left:25px"></span>图2.10(a)绘制了
+<br><br>
+<span style="margin-left:25px"></span>的波形，包络位正弦信号。
+<br><br>
+<span style="margin-left:25px"></span>的频域的分布如图2.10(b)所示，形状如同为包络递减的spurs。
+<br><br>
+<span style="margin-left:25px"></span>每个spurs的频率间隔为采样频率。这也就能解释为什么图2.8中存在周期性的spurs。文献[18]中分析了对输出SFDR的影响，表达式如(2-25)，截断位数每提升一位系统SFDR将提高6.02dBc。
+<br><br>
+<span style="margin-left:25px"></span>SFDR=6.02P3.92 dBc(225)
+<br><br>
+<span style="margin-left:25px"></span>图2.9相位截断误差及其频谱
+<br><br>
+<span style="margin-left:25px"></span>图2.10相位截断噪声及其频谱
+<br><br>
+<span style="margin-left:25px"></span>2)近似计算噪声
+<br><br>
+<span style="margin-left:25px"></span>传统的查表法中，相位-幅度的映射是不存在误差的。
+<br><br>
+<span style="margin-left:25px"></span>如2.2节所述，查找表压缩方法中的二阶近似将导致误差的产生。同样，本文的改进算法中由于cos(/4
+<br><br>
+<span style="margin-left:25px"></span>)T近似条件的使用，也引入了噪声。
+<br><br>
+<span style="margin-left:25px"></span>略去高阶分量后得到误差
+<br><br>
+<span style="margin-left:25px"></span>表达式如公式(2-26)。
+<br><br>
+<span style="margin-left:25px"></span>可以发现噪声中存在单频分量
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>/4
+<br><br>
+<span style="margin-left:25px"></span>(T-1)，相当于对信号进行放大，并不会影响频谱特性，因而也可略去。
+<br><br>
+<span style="margin-left:25px"></span>最终噪声的表达式为(2-27)。
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>cos(
+<br><br>
+<span style="margin-left:25px"></span>1)
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>(1+
+<br><br>
+<span style="margin-left:25px"></span>32
+<br><br>
+<span style="margin-left:25px"></span>)(226)
+<br><br>
+<span style="margin-left:25px"></span>32
+<br><br>
+<span style="margin-left:25px"></span>cos
+<br><br>
+<span style="margin-left:25px"></span>(227)
+<br><br>
+<span style="margin-left:25px"></span>的频谱如前所述，故近似噪声
+<br><br>
+<span style="margin-left:25px"></span>和相位截断噪声
+<br><br>
+<span style="margin-left:25px"></span>类似，也会产生多个周期性的spurs。
+<br><br>
+<span style="margin-left:25px"></span>3) 输出量化噪声
+<br><br>
+<span style="margin-left:25px"></span>在输出时进行量化会直接引入噪声，根据统计规律，一般认为量化噪声为高斯白噪声，只对频谱的底噪有影响。
+<br><br>
+<span style="margin-left:25px"></span>根据文献[18]的推导，量化噪声对系统SNR的影响如(2-28)所示，量化位数M每提升1bit，系统SNR提升6.02 dB。SNR=6.02M+1.76 dBc(228)
+<br><br>
+<span style="margin-left:25px"></span>图2.11量化噪声频谱
+<br><br>
+<span style="margin-left:25px"></span>如图2.11所示，量化噪声频谱基本上呈现高斯白的特点，但是由于精度有限还是在部分频率上存在spurs。
+<br><br>
+<span style="margin-left:25px"></span>基于直接数字式的振荡器设计
+<br><br>
+<span style="margin-left:25px"></span>ROM-CORDIC混合结构设计
+<br><br>
+<span style="margin-left:25px"></span>直接数字合成器在频率分辨率、捷变性能上取得较大成功，但较锁相环式振荡器，
+<br><br>
+<span style="margin-left:25px"></span>传统 DDS仍存在时钟频率受限，输出杂散性能不佳等情况。为了提高DDS的时钟频率和杂散性能，本文采用了2.3.3节中使用的改进算法，将查找表和角度旋转法结合。
+<br><br>
+<span style="margin-left:25px"></span>此举进一步减少了查找表的寻址深度，较传统CORDIC结构所用资源也更省，使系统能以更快的时钟频率获得非常高的精度。图3.1本文使用的DDS结构框图
+<br><br>
+<span style="margin-left:25px"></span>图3.1显示了DDS的系统框图。
+<br><br>
+<span style="margin-left:25px"></span>它的输入为16 bit的频率控制字(fcw)和相位控制字(pcw)，用于更改系统输出的正弦波频率和初始相位。相位累加器(PA)根据fcw和pcw生成16 bit 的正则相位。相位压缩模块(PC)可使得系统用(0， 1/4)区间的正、余弦函数值表示(0， 2)的值域。
+<br><br>
+<span style="margin-left:25px"></span>PC提取出的前3 bit作为对称操作控制字(mcw)，后13bit作为伪相位’输出至PAC， 用于查找表寻址和控制旋转角度。相位-幅度累加器(PAC)包括384-byte的查找表和7组角度旋转电路。
+<br><br>
+<span style="margin-left:25px"></span>’的1~6位用于查找表寻址，获得粗分辨率信号’的7~13位对粗分辨率信号进行旋转修正，获得细分辨率信号
+<br><br>
+<span style="margin-left:25px"></span>对称操作模块将细分辨率信号从(0，1/4)对称到(0， 2)区间，最后输出。
+<br><br>
+<span style="margin-left:25px"></span>相位累加器(PA)设计
+<br><br>
+<span style="margin-left:25px"></span>PA接收输入的fcw和pcw，输出线性增长的正则相位，其表达式如(2-3)。
+<br><br>
+<span style="margin-left:25px"></span>图3.2所示，PA由一个16 bit 加法器和16 bit 寄存器构成，输出也为16 bit。图3.2相位累加器框图
+<br><br>
+<span style="margin-left:25px"></span>根据公式(2-4)和(2-5)，输出信号的频率为
+<br><br>
+<span style="margin-left:25px"></span>=fcw
+<br><br>
+<span style="margin-left:25px"></span>，频率分辨率为
+<br><br>
+<span style="margin-left:25px"></span>，可见要加强频率分辨率，首先需提高加法器位数。
+<br><br>
+<span style="margin-left:25px"></span>pcw的作用是在系统重置后对相位赋初值。
+<br><br>
+<span style="margin-left:25px"></span>重置一旦结束，相位初值就不受pcw的影响，故不能随时更改相位。相位压缩器(PC)设计
+<br><br>
+<span style="margin-left:25px"></span>图3.3相位分配结构
+<br><br>
+<span style="margin-left:25px"></span>图3.3展示了数字相位的区域：
+<br><br>
+<span style="margin-left:25px"></span>其中1 ~ 3位用于对称操作，4 ~ 9位用于查找表寻址，10 ~ 16用于角度旋转。为了将任意相角的向量映射到(0， 1/4 pi)区间，还需要对上述相位进行变换。相位的前3位表示向量所在的8分区间，利用区间信息可将该向量对折至(0， 1/4 pi)区间。
+<br><br>
+<span style="margin-left:25px"></span>因此直接取1~3位作为对称操作控制字(scw)，输出至对称操作模块。为计算出伪相角’，需利用的4~16位。根据对称关系，得到表达式(3-1)[4:
+<br><br>
+<span style="margin-left:25px"></span>16](3)=0~[4:
+<br><br>
+<span style="margin-left:25px"></span>16](3)=1(31)
+<br><br>
+<span style="margin-left:25px"></span>’的前6位作为查找表地址(address)，后7位作为旋转控制字(rcw)，分别输出至ROM和旋转电路用于确定细分辨率信号
+<br><br>
+<span style="margin-left:25px"></span>[4:
+<br><br>
+<span style="margin-left:25px"></span>9][10:
+<br><br>
+<span style="margin-left:25px"></span>16](32)
+<br><br>
+<span style="margin-left:25px"></span>相位幅度转换器(PAC)设计
+<br><br>
+<span style="margin-left:25px"></span>)A 查找表
+<br><br>
+<span style="margin-left:25px"></span>查找表是将相位转化成幅度的重要模块，其作用是输出粗分辨率的信号。
+<br><br>
+<span style="margin-left:25px"></span>查找表需要输出
+<br><br>
+<span style="margin-left:25px"></span>=cos(/4)，
+<br><br>
+<span style="margin-left:25px"></span>=sin(/4)。
+<br><br>
+<span style="margin-left:25px"></span>与参考文献[12， 13]相似，查找表额外存储了两组函数=/4cos(/4)
+<br><br>
+<span style="margin-left:25px"></span>， y
+<br><br>
+<span style="margin-left:25px"></span>=/4sin(/4)，以减少乘法操作。
+<br><br>
+<span style="margin-left:25px"></span>图3.4相位-幅度转换器(PAC)结构
+<br><br>
+<span style="margin-left:25px"></span>根据公式(2-22)，为了防止溢出，实际写入值是T(
+<br><br>
+<span style="margin-left:25px"></span>)。
+<br><br>
+<span style="margin-left:25px"></span>具体设计中，()的长度为16 bit，而(
+<br><br>
+<span style="margin-left:25px"></span>)量化位数为8bit，因此查找表的输出带宽为48 bit。
+<br><br>
+<span style="margin-left:25px"></span>)B旋转电路
+<br><br>
+<span style="margin-left:25px"></span>如图3.6，角度旋转电路接收查找表输出和旋转控制字(rcw)，最终将向量
+<br><br>
+<span style="margin-left:25px"></span>=(
+<br><br>
+<span style="margin-left:25px"></span>)旋转至修正值
+<br><br>
+<span style="margin-left:25px"></span>=(
+<br><br>
+<span style="margin-left:25px"></span>)。
+<br><br>
+<span style="margin-left:25px"></span>根据2.4.2中的误差分析，角度旋转将带来杂散性能的增益，rcw每提升一位SFDR提升6.02dBc。图3.5旋转单元电路结构
+<br><br>
+<span style="margin-left:25px"></span>改进 CORDIC算法由多次矩阵乘法迭代产生的，公式(2-21)中的矩阵乘法操作包括两次加法和两次移位，
+<br><br>
+<span style="margin-left:25px"></span>因此在设计旋转电路时，选取两个移位器和两个16 bit加法器构成旋转单元电路。迭代操作可由多个单元电路级联构成，经过7级级联，最终得到(0， 1/4)区间的向量)C 对称操作模块
+<br><br>
+<span style="margin-left:25px"></span>(0， 1/4)区间向量
+<br><br>
+<span style="margin-left:25px"></span>需要经过对称操作才能映射到(0， 2)向量
+<br><br>
+<span style="margin-left:25px"></span>对称操作的逻辑表达式如图3.7，。
+<br><br>
+<span style="margin-left:25px"></span>从公式中看出，利用多路选择器和反相器即可实现对称输出模块。图3.6对称输出逻辑
+<br><br>
+<span style="margin-left:25px"></span>图3.7展示了/2压缩方法的对称操作，/4压缩方法类似。
+<br><br>
+<span style="margin-left:25px"></span>在查表、角度旋转得到细分辨率信号后，使用rcw控制对称的位置得到输出信号。图3.7对称操作示意图
+<br><br>
+<span style="margin-left:25px"></span>资源配置分析
+<br><br>
+<span style="margin-left:25px"></span>1）(
+<br><br>
+<span style="margin-left:25px"></span>)与(
+<br><br>
+<span style="margin-left:25px"></span>)量化位数分配
+<br><br>
+<span style="margin-left:25px"></span>公式(2-21)中有两组变量，其中(
+<br><br>
+<span style="margin-left:25px"></span>)值域为(0，
+<br><br>
+<span style="margin-left:25px"></span>-M
+<br><br>
+<span style="margin-left:25px"></span>)，(
+<br><br>
+<span style="margin-left:25px"></span>)值域为(0，1)。
+<br><br>
+<span style="margin-left:25px"></span>导致()只有前几位没有值。
+<br><br>
+<span style="margin-left:25px"></span>为了方便计算，将替换成(
+<br><br>
+<span style="margin-left:25px"></span>1)，使得值域由{1， 0}变成了{1， -1}，方法如公式(3-3)。
+<br><br>
+<span style="margin-left:25px"></span>最终()只有后N-M-2位有数值。
+<br><br>
+<span style="margin-left:25px"></span>具体在我的设计中，(
+<br><br>
+<span style="margin-left:25px"></span>)使用16位保存，而(
+<br><br>
+<span style="margin-left:25px"></span>)只需要8位保存。
+<br><br>
+<span style="margin-left:25px"></span>=+1
+<br><br>
+<span style="margin-left:25px"></span>+2
+<br><br>
+<span style="margin-left:25px"></span>+1
+<br><br>
+<span style="margin-left:25px"></span>(2b
+<br><br>
+<span style="margin-left:25px"></span>1)
+<br><br>
+<span style="margin-left:25px"></span>(33)
+<br><br>
+<span style="margin-left:25px"></span>2）address与rcw位数分配
+<br><br>
+<span style="margin-left:25px"></span>实验中发现，当约束条件(3-5)不满足时，系统的SFDR，SNR将发生骤降。
+<br><br>
+<span style="margin-left:25px"></span>约束条件：
+<br><br>
+<span style="margin-left:25px"></span>address[为了避免此现象，需要斟酌address与rcw的位数分配。
+<br><br>
+<span style="margin-left:25px"></span>因为我的方案中的位数是13，那么查找表和旋转电路可分配的为数也为13，故取address位长为6，旋转控制位(rcw)为7位。如此分配能最大程度压缩查找表的大小，从而提升系统的时钟频率，但是会增加流水级数。流水线设计
+<br><br>
+<span style="margin-left:25px"></span>在之前的章节中，已经提到过CORDIC算法可使用流水线加速，根据迭代公式(2-21)，可使用级联的旋转单元电路实现迭代操作。
+<br><br>
+<span style="margin-left:25px"></span>要实现流水线结构，一个简单的想法是在各级单元电路之间插入触发器，这使得级联电路的时延降低至每个旋转电路和触发器的时延。由于旋转单元电路使用rcw控制旋转方向，如果旋转方向在时间上不能对应的话，将无法输出正确的结果，因此控制信号也要层层缓存。
+<br><br>
+<span style="margin-left:25px"></span>最终的结构示意图如3.8，各级旋转单元之间插入了D触发器，用于缓存输出数据()作为下一级的输入。
+<br><br>
+<span style="margin-left:25px"></span>同样PC输出的rcw控制信号也经过了多级流水，保证了控制信号和操作数据时间上的一致。图3.8流水线结构
+<br><br>
+<span style="margin-left:25px"></span>另外，加法器也可使用流水线加速，方案如图3.9所示。
+<br><br>
+<span style="margin-left:25px"></span>在文献[7]中也通过优化得到了更快的加法器。但是本次设计中，加法器流水对系统的时钟频率提升比较小，但是面积功耗会大大提升，综合考虑最终没有使用流水线加法器。图3.9 16 bits流水线加法器原理图
+<br><br>
+<span style="margin-left:25px"></span>数控振荡器实现和仿真
+<br><br>
+<span style="margin-left:25px"></span>基于第3章中提出的 ROM- CORDIC混合电路结构设计，本章主要介绍两个实验平台的搭建，综合、布局布线后的时序仿真结果的展示，
+<br><br>
+<span style="margin-left:25px"></span>得到该设计的最终指标并且同前人工作进行比较。功能性仿真平台搭建
+<br><br>
+<span style="margin-left:25px"></span>本文最基本的功能性仿真使用MATLAB和modelsim实现。
+<br><br>
+<span style="margin-left:25px"></span>本设计在MATLAB上搭建了二进制计算平台，并在二进制平台上完成了实验的数值仿真。
+<br><br>
+<span style="margin-left:25px"></span>另一项工作是将MATLAB平台上的架构映射成Verilog代码，并在modelsim波形仿真工具进行验证。结果显示，两平台的在输入相同时，输出波形也完全一致。图4.1仿真平台结构图
+<br><br>
+<span style="margin-left:25px"></span>最后实现了两平台的联合，如图4.1所示。
+<br><br>
+<span style="margin-left:25px"></span>MATLAB生成查找表数据通过文件写入到modelsim的ROM中，将其波形数据导回MATLAB进行频谱分析，构成计算闭环。本节将对MATLAB以及modelsim的平台搭建进行详细说明。MATLAB数值计算平台仿真
+<br><br>
+<span style="margin-left:25px"></span>利用MATLAB进行仿真的突出优点是很方便查看所有内部信号的数值，非常适合进行功能性仿真。
+<br><br>
+<span style="margin-left:25px"></span>但MATLAB中的变量类型是默认是浮点型，而数字电路设计中均使用二进制码进行运算，因此需要在MATLAB上重新搭建二进制计算平台。在MATLAB数值计算平台上，进行的验证包括：
+<br><br>
+<span style="margin-left:25px"></span>正则相位验证、查找表验证，CORDIC旋转验证。分别在以下具体说明。（1）正则相位验证
+<br><br>
+<span style="margin-left:25px"></span>在第三章中已经提到，正则相位由累加器生成，故对相位的验证即验证二进制加法器的正确性。
+<br><br>
+<span style="margin-left:25px"></span>经验证，生成相位均等步长增长无误。（2）查找表验证
+<br><br>
+<span style="margin-left:25px"></span>二进制查找表的实现方法实际是使用矩阵保存数据，如图4.2(a)，利用6位地址输出查找矩阵的一行。
+<br><br>
+<span style="margin-left:25px"></span>为了验证查找表方法的正确性，分析粗精度信号的频谱，以验证其精度是否达标。
+<br><br>
+<span style="margin-left:25px"></span>图4.2粗、细分辨率信号频谱
+<br><br>
+<span style="margin-left:25px"></span>由于粗精度信号
+<br><br>
+<span style="margin-left:25px"></span>仅使用了前9位相位，根据公式(2-25)，理论最低SDFR如下所示：
+<br><br>
+<span style="margin-left:25px"></span>的频谱中SFDR值达到54 dBc，高于理论最低值4 dBc，可见查找表方法确实达到理论要求。
+<br><br>
+<span style="margin-left:25px"></span>SFDR
+<br><br>
+<span style="margin-left:25px"></span>=6.02P3.92=50.24 dBc(41)
+<br><br>
+<span style="margin-left:25px"></span>（3）角度旋转算法验证
+<br><br>
+<span style="margin-left:25px"></span>角度旋转电路结构在3.1.3中已经介绍过，由7级单元电路级联而成，每个单元内部包括两个加法器和两个移位器。
+<br><br>
+<span style="margin-left:25px"></span>根据(1)和(2)的验证，可以认为角度旋转的输入和旋转控制字(rcw)无误，那么只需要分析输出波形，即可验证角度旋转的正确性。
+<br><br>
+<span style="margin-left:25px"></span>输出波形的频谱如图4.2(b)，可见其SFDR值由54dBc提升至100 dBc，提升为46dBc。
+<br><br>
+<span style="margin-left:25px"></span>根据公式(2-25)，角度旋转修正的SFDR提升值为42.14 dBc，而且考虑到多次旋转中存在移位操作，有限字长效应产生了新的误差，故该提升也超出了最低要求。modelsim仿真平台搭建
+<br><br>
+<span style="margin-left:25px"></span>基于二进制的MATLAB计算平台的算法，本次毕设项目完成了对应Verilog代码的编写，并在modelsim建立了testbench，给出fcw，pcw作为系统输入，并完成ROM数据接口方便文件信息写入。
+<br><br>
+<span style="margin-left:25px"></span>图4.3modelsim RTL级波形仿真
+<br><br>
+<span style="margin-left:25px"></span>RTL波形仿真如图4.3，将波形结果进行分析，结果和MATLAB二进制计算结果完全相同，表明RTL代码和MATLAB代码具有同一性。
+<br><br>
+<span style="margin-left:25px"></span>关键路径优化方法
+<br><br>
+<span style="margin-left:25px"></span>本节介绍的实验过程中提高性能的两种手段，包括结构规范合流水线。
+<br><br>
+<span style="margin-left:25px"></span>电路结构规范
+<br><br>
+<span style="margin-left:25px"></span>由于综合工具对次关键路径缺乏关注，导致多条关键路径的出现。
+<br><br>
+<span style="margin-left:25px"></span>为了解决这个问题，首先需要做的是规范电路的结构，使代码能被更高效综合。在实践中总结了3条基本规则：优化模块划分，实现资源共享和替代电路的使用。(1) 优化模块划分
+<br><br>
+<span style="margin-left:25px"></span>优化模块的划分观点之一是，最好能在每一个模块末端加入触发器，避免不同模块通过组合逻辑连接，如图4.4所示。
+<br><br>
+<span style="margin-left:25px"></span>这样能减少模块间接口的连接，而且更易于控制关键路径的长度。图4.4模块划分优化
+<br><br>
+<span style="margin-left:25px"></span>建立在以上规范，优化划分的第二点是平衡各模块的组合逻辑规模，尽量使得模块内关键路劲长度相似。
+<br><br>
+<span style="margin-left:25px"></span>发现某一个关键路径上的组合逻辑比较大时，尽量将其分成两个部分，并在中间插入触发器。(2)实现资源共享
+<br><br>
+<span style="margin-left:25px"></span>对于同样的真值表，可以存在多种表述，也对应不同的电路复杂度。
+<br><br>
+<span style="margin-left:25px"></span>在设计中应尽量使得资源能被重复利用，用最简单的电路结构实现相同的功能。实践中，我在共享一个加法器后，关键路径取得了比较大的减少。(3)替代电路的使用
+<br><br>
+<span style="margin-left:25px"></span>对于同一个表达式，也能用不同的电路实现。
+<br><br>
+<span style="margin-left:25px"></span>例如if else语句和case语句在部分时刻就存在替代关系。根据参考资料(插入引用)的介绍，对于判断条件不变的情况，使用case 电路较if else电路更快。使用case替换if else后，关键路径也得到不小的优化。图4.5case和ifelse电路替代
+<br><br>
+<span style="margin-left:25px"></span>关键模块重新设计
+<br><br>
+<span style="margin-left:25px"></span>规范电路内部结构对综合结果起到了正面作用，但是关键路径本身的问题还没有解决。
+<br><br>
+<span style="margin-left:25px"></span>这时就需要重新设计关键模块，使它变得更快。例如本文的关键路径是查找表。
+<br><br>
+<span style="margin-left:25px"></span>在前期工作中，为了方便测试使用RAM记录查找表。为了提升查找表的速度，改用ROM查表，用组合逻辑将ROM输出固定后，综合后查找表的延时大大降低了，最终时钟频率可运行至2 GHz。在最终的设计方案中，旋转单元电路中的加法器成关键路径所在。
+<br><br>
+<span style="margin-left:25px"></span>我使用流水线加速器以减少加法操作的时间，将时钟频率提升至2.6 GHz，但是如3.3所述，该方法对面积功耗的要求大大提升了。时序仿真结果
+<br><br>
+<span style="margin-left:25px"></span>功能性仿真的用途是验证逻辑的正确性，但是没有考虑到实际的物理条件。
+<br><br>
+<span style="margin-left:25px"></span>门级电路的延时和布线的延时的差异会引起信号时序的不一致，一旦超出时钟频率约束将导致结果错误。本节的内容首先介绍综合和布局布线的工具，然后展示时序仿真的结果。工具介绍
+<br><br>
+<span style="margin-left:25px"></span>A）Design Compiler
+<br><br>
+<span style="margin-left:25px"></span>Design Compiler(DC)是一款综合工具，主要功能是将Verilog代码映射到门级电路，并进行优化。
+<br><br>
+<span style="margin-left:25px"></span>综合的步骤主要包括三个阶段：转换、映射、优化。首先将 HDL代码转化成工艺无关的 RTL级网表，然后指定工艺库将 RTL级网表映射到前端门级网表上，
+<br><br>
+<span style="margin-left:25px"></span>最后在约束条件下对前端门级网表进行优化。最终的网表中就包含了各门级电路的时间信息，即可进行时序仿真。但是在综合过程中时序中连线延时、时钟扭斜等无法确定。B）IC Compiler
+<br><br>
+<span style="margin-left:25px"></span>IC Compiler(ICC)是一款布局布线工具，除了对电路进行布局布线外，ICC还提供时钟树综合、IO和pad的布局等作用。
+<br><br>
+<span style="margin-left:25px"></span>ICC不仅考虑了原件之间连线的延时、时钟不同步等问题，同时提取金属器件之间的寄生电容，使得结果和实际情况更加一致。结果展示
+<br><br>
+<span style="margin-left:25px"></span>A）DC结果
+<br><br>
+<span style="margin-left:25px"></span>根据之前的设计进行了DC综合，时钟设置为2.0 GHz仍可满足时序约束条件，见图4.6。
+<br><br>
+<span style="margin-left:25px"></span>图4.7主要展示三个部分，包括输出信号sin_amp的时序，查找表查找的时序，以及旋转单元内部加法器的时序。图4.6前端时间约束
+<br><br>
+<span style="margin-left:25px"></span>图4.7主要展示三个部分，包括输出信号sin_amp的时序，查找表查找的时序，以及旋转单元内部加法器的时序。
+<br><br>
+<span style="margin-left:25px"></span>图4.7前端时序波形图
+<br><br>
+<span style="margin-left:25px"></span>观察发现，输出信号sin_amp的滞后大约半个周期，属于正常范围。
+<br><br>
+<span style="margin-left:25px"></span>查找表的输入为A，输出为Q，从信号对应关系看来，查找输出要滞后1个周期。观察黄框标出的旋转单元加法器时序，输出的滞后和抖动超过了3/4个周期，有可能导致超出约束的风险。B）ICC结果
+<br><br>
+<span style="margin-left:25px"></span>使用synopsis的ICC对前端网表进行布局布线，得到了后端网表、相关时序信息，最终的版图如图4.8所示。
+<br><br>
+<span style="margin-left:25px"></span>图4.9和图4.10展示了ICC的时序约束和时序仿真结果。
+<br><br>
+<span style="margin-left:25px"></span>从图4.9看出，电路在0.6 ns(1.7 GHz)时约束得到满足，相比DC综合结果稍慢0.1ns。图4.8后端设计版图
+<br><br>
+<span style="margin-left:25px"></span>图4.9后端时序约束
+<br><br>
+<span style="margin-left:25px"></span>图4.10中注意到查找表输出Q部分值为蓝色状态，这是因为经过ICC优化后无效连线在物理上被省略了。
+<br><br>
+<span style="margin-left:25px"></span>另外图4.10中黄框标出的加法器延时依然比较大，进一步说明了加法器成为限制电路的瓶颈。图4.10后端时序波形仿真
+<br><br>
+<span style="margin-left:25px"></span>性能比较
+<br><br>
+<span style="margin-left:25px"></span>本文实现的 DDS式数控振荡器使用了65 nm TSMC工艺库，输入为16 bits频率控制字，经 ICC后端在
+<br><br>
+<span style="margin-left:25px"></span>1.7 GHz时钟下可输出频率为2.6 kHz~0.85 GHz的正余弦波。输出的量化位数为16 bits，理想输出信号的SFDR为100 dBc，SNR为89 dB。电路设计中，使用1个16位加法器使用了一块6位地址48位字长的ROM和7组旋转单元电路。最终功耗23.4mW。表4.1性能汇总和比较
+<br><br>
+<span style="margin-left:25px"></span>技术
+<br><br>
+<span style="margin-left:25px"></span>方法
+<br><br>
+<span style="margin-left:25px"></span>CMOS
+<br><br>
+<span style="margin-left:25px"></span>工艺
+<br><br>
+<span style="margin-left:25px"></span>时钟
+<br><br>
+<span style="margin-left:25px"></span>[MHz]
+<br><br>
+<span style="margin-left:25px"></span>相位截断
+<br><br>
+<span style="margin-left:25px"></span>[bits]
+<br><br>
+<span style="margin-left:25px"></span>SFDR
+<br><br>
+<span style="margin-left:25px"></span>[dBc]
+<br><br>
+<span style="margin-left:25px"></span>功耗
+<br><br>
+<span style="margin-left:25px"></span>[mW]
+<br><br>
+<span style="margin-left:25px"></span>2007 JSSC[14]
+<br><br>
+<span style="margin-left:25px"></span>Hybrid-CORDIC
+<br><br>
+<span style="margin-left:25px"></span>0.25um
+<br><br>
+<span style="margin-left:25px"></span>380
+<br><br>
+<span style="margin-left:25px"></span>16
+<br><br>
+<span style="margin-left:25px"></span>90
+<br><br>
+<span style="margin-left:25px"></span>154
+<br><br>
+<span style="margin-left:25px"></span>2011 JSSC[13]
+<br><br>
+<span style="margin-left:25px"></span>Excess-four CORDIC
+<br><br>
+<span style="margin-left:25px"></span>0.18um
+<br><br>
+<span style="margin-left:25px"></span>260
+<br><br>
+<span style="margin-left:25px"></span>20
+<br><br>
+<span style="margin-left:25px"></span>113
+<br><br>
+<span style="margin-left:25px"></span>16.5
+<br><br>
+<span style="margin-left:25px"></span>2014 ISCAS[17]
+<br><br>
+<span style="margin-left:25px"></span>Multiplier CORDIC
+<br><br>
+<span style="margin-left:25px"></span>FPGA
+<br><br>
+<span style="margin-left:25px"></span>1000
+<br><br>
+<span style="margin-left:25px"></span>20
+<br><br>
+<span style="margin-left:25px"></span>120
+<br><br>
+<span style="margin-left:25px"></span>54.9
+<br><br>
+<span style="margin-left:25px"></span>本设计
+<br><br>
+<span style="margin-left:25px"></span>ROM-CORDIC
+<br><br>
+<span style="margin-left:25px"></span>65 nm
+<br><br>
+<span style="margin-left:25px"></span>1700
+<br><br>
+<span style="margin-left:25px"></span>16
+<br><br>
+<span style="margin-left:25px"></span>100
+<br><br>
+<span style="margin-left:25px"></span>23.4
+<br><br>
+<span style="margin-left:25px"></span>表4.1对近年来DDS的研究进行了总结和比较。
+<br><br>
+<span style="margin-left:25px"></span>使用本设计的仿真结果进行对比，ROM-CORDIC结构在时钟频率、SFDR、功耗上均表现优异，综合性能处于领先水平。结论
+<br><br>
+<span style="margin-left:25px"></span>主要工作总结
+<br><br>
+<span style="margin-left:25px"></span>直接数字合成(DDS)作为实现数控振荡器的重要方式，随着近年来性能的提升，其使用正变得越来越流行。
+<br><br>
+<span style="margin-left:25px"></span>当前的研究中，查找表结构中的固有问题依然没有彻底解决，导致DDS的用途还受到限制。本文提出了ROM-CORDIC混合结构，使用角度旋转修正减少了查找表的地址长度，通过并行的ROM省略了旋转中的乘法操作。
+<br><br>
+<span style="margin-left:25px"></span>论文中提出的方法解决了直接数字式结构中的部分问题，分析了输出的误差来源，并且利用MATLAB和modelsim搭建了基础的功能验证平台。根据误差理论指导，对系统结构进行了定量的分析。在电路设计过程中实现了电路的流水线化，最终经过综合、布局布线，系统运行的时钟频率为1.7GHz，输出最大杂散(SFDR)达到100 dBc。相比文献[13]使用FPGA实现的DDS，芯片的整体功耗仅为其42%，但是时钟频率为其170%、ROM大小仅为其25%左右。鉴于在ICC中布局布线的优化尚未展开，电路的时钟频率还有再进一步的空间。未来工作展望
+<br><br>
+<span style="margin-left:25px"></span>本科毕设期间，由于时间、人力、视野的不充分，使得最终的结果还达不到尽善尽美的标准。
+<br><br>
+<span style="margin-left:25px"></span>主要改进的空间还有方向、算法、电路、工具等。(1)未来应拓宽视野，跳出传统的结构，观察是否有更高效的结构存在。
+<br><br>
+<span style="margin-left:25px"></span>(2)在此框架下实现更多算法。
+<br><br>
+<span style="margin-left:25px"></span>因为时间、进程的限制，目前只实现了少数几种算法，新的想法还存在理论中但没有仿真实现。未来可以参考现在的流程对现有算法、框架改进，并与现在的结果比较。(3)电路上提出创新在未来有广泛的空间。
+<br><br>
+<span style="margin-left:25px"></span>目前使用的都是标准工艺库内的器件，没有提出更适应系统的新电路。如果能对加法器、存储器或者旋转单元等电路上改进，将是巨大的创新。(4)加强工具的使用将有助于继续提高结果。
+<br><br>
+<span style="margin-left:25px"></span>在针对综合进行基础的优化后得结果得到了提升，应该还有挖掘空间。另外布局布线还没有进行优化，导致后仿结果和前仿结果差距比较大，未来熟悉ICC等工具的使用后，应该能使后仿结果更加迫近DC综合结果。插图索引
+<br><br>
+<span style="margin-left:25px"></span>表格索引
+<br><br>
+<span style="margin-left:25px"></span>参考文献
+<br><br>
+<span style="margin-left:25px"></span>[1]RolandE.Best.
+<br><br>
+<span style="margin-left:25px"></span> 锁相环设计、仿真和应用[M]. 清华大学出版社， 2004.[2]Zhao Y， Chen Z Z， Du Y， et al.
+<br><br>
+<span style="margin-left:25px"></span> A 0.56 THz Phase-Locked Frequency Synthesizer in 65 nm CMOS Technology[J]. IEEE Journal of Solid-State Circuits， 2016， 51(12):3005-3019.[3]Tierney J， Rader C M， Gold B.
+<br><br>
+<span style="margin-left:25px"></span> A Digital Frequency Synthesizer[J]. IEEE Transactions on Audio Electroacoustics， 1971， 19(1):48-57.[4]Genovese M， Napoli E， Caro D D， et al.
+<br><br>
+<span style="margin-left:25px"></span> Analysis and comparison of Direct Digital Frequency Synthesizers implemented on FPGA[J]. Integration the Vlsi Journal， 2014， 47(2):261-271.[5]Sunderland D A， Strauch R A， Wharfield S S， et al.
+<br><br>
+<span style="margin-left:25px"></span> CMOS/SOS frequency synthesizer LSI circuit for spread spectrum communications[J]. IEEE Journal of Solid-State Circuits， 2010， 19(4):497-506.[6]Nicholas H T， Samueli H.
+<br><br>
+<span style="margin-left:25px"></span> A 150-MHz Direct Digital Frequency Synthesizer In 1.25/spl mu/m CMOS With -90dBc Spurious Performance[C]// Solid-State Circuits Conference， 1991. Digest of Technical Papers. Isscc. 1991 IEEE International. IEEE， 1991:42-286.[7]Langlois J M P， Al-Khalili D.
+<br><br>
+<span style="margin-left:25px"></span> Novel approach to the design of direct digital frequency synthesizers based on linear interpolation[J]. IEEE Transactions on Circuits Systems II Analog Digital Signal Processing， 2003， 50(9):567-578.[8]Ashrafi A， Adhami R， Milenkovic A.
+<br><br>
+<span style="margin-left:25px"></span> A Direct Digital Frequency Synthesizer Based on the Quasi-Linear Interpolation Method[J]. IEEE Transactions on Circuits Systems I Regular Papers， 2005， 57(4):863-872.[9]Caro D D， Petra N， Strollo A G M.
+<br><br>
+<span style="margin-left:25px"></span> Direct Digital Frequency Synthesizer Using Nonuniform Piecewise-Linear Approximation[J]. Circuits Systems I Regular Papers IEEE Transactions on， 2011， 58(10):2409-2419.[10]Volder J E.
+<br><br>
+<span style="margin-left:25px"></span> The CORDIC Trigonometric Computing Technique[J]. Institute of Radio Engineers Transactions on Electronic Computers， 1959， EC-8(3):330-334.[11]Mortezapour S， Lee E K F.
+<br><br>
+<span style="margin-left:25px"></span> Design of low-power ROM-less direct digital frequency synthesizer using nonlinear digital-to-analog converter[J]. 1999， SC-34(10):1350-1359.[12]Yoo T， Hong C Y， Jung Y H， et al.
+<br><br>
+<span style="margin-left:25px"></span> A 2 GHz 130 mW Direct-Digital Frequency Synthesizer With a Nonlinear DAC in 55 nm CMOS[J]. IEEE Journal of Solid-State Circuits， 2014， 49(12):2976-2989.[13]Willson A， Ojha M， Agarwal S， et al.
+<br><br>
+<span style="margin-left:25px"></span> A direct digital frequency synthesizer with minimized tuning latency of 12ns[C]// IEEE International Solid-State Circuits Conference. IEEE， 2011:138-140.[14]Caro D D， Petra N， Strollo A G M.
+<br><br>
+<span style="margin-left:25px"></span> A 380 MHz Direct Digital Synthesizer/Mixer With Hybrid CORDIC Architecture in 0.25 um CMOS[J]. IEEE Journal of Solid-State Circuits， 2006， 42(1):151-160.[15]Grayver E， Daneshrad B.
+<br><br>
+<span style="margin-left:25px"></span> Direct digital frequency synthesis using a modified CORDIC[C]// IEEE International Symposium on Circuits and Systems. IEEE， 1998:241-244 vol.5.[16]Madisetti A， Kwentus A Y， Willson A N.
+<br><br>
+<span style="margin-left:25px"></span> A 100-MHz， 16-b， direct digital frequency synthesizer with a 100-dBc spurious-free dynamic range[J]. IEEE Journal of Solid-State Circuits， 2002， 34(8):1034-1043.[17]Bergeron M， Willson A N.
+<br><br>
+<span style="margin-left:25px"></span> A 1-GHz direct digital frequency synthesizer in an FPGA[C]// IEEE International Symposium on Circuits and Systems. IEEE， 2014:329-332.[18]O’Leary P， Maloberti F.
+<br><br>
+<span style="margin-left:25px"></span> A direct-digital synthesizer with improved spectral performance[J]. IEEE Transactions on Communications， 1991， 39(7):1046-1048.[8] Yoo T， Hong C Y， Jung Y H， et al.
+<br><br>
+<span style="margin-left:25px"></span> A 2 GHz 130 mW Direct-Digital Frequency Synthesizer With a Nonlinear DAC in 55 nm CMOS[J]. IEEE Journal of Solid-State Circuits， 2014， 49(12):2976-2989.[9]Caro D D， Petra N， Strollo A G M.
+<br><br>
+<span style="margin-left:25px"></span> A 380 MHz Direct Digital Synthesizer/Mixer With Hybrid CORDIC Architecture in 0.25 um CMOS[J]. IEEE Journal of Solid-State Circuits， 2006， 42(1):151-160.[10]Essenwanger K A， Reinhardt V S.
+<br><br>
+<span style="margin-left:25px"></span> Sine output DDSs. A survey of the state of the art[J]. 1998:370-378.[11]Madisetti A， Kwentus A Y， Willson A N.
+<br><br>
+<span style="margin-left:25px"></span> A 100-MHz， 16-b， direct digital frequency synthesizer with a 100-dBc spurious-free dynamic range[J]. IEEE Journal of Solid-State Circuits， 2002， 34(8):1034-1043.[12]Volder J E.
+<br><br>
+<span style="margin-left:25px"></span> The CORDIC Trigonometric Computing Technique[J]. Ire Transactions on Electronic Computers， 2009， EC-8(3):330-334.[13]Willson A， Ojha M， Agarwal S， et al.
+<br><br>
+<span style="margin-left:25px"></span> A direct digital frequency synthesizer with minimized tuning latency of 12ns[C]// IEEE International Solid-State Circuits Conference. IEEE， 2011:138-140.[14]Bergeron M， Willson A N.
+<br><br>
+<span style="margin-left:25px"></span> A 1-GHz direct digital frequency synthesizer in an FPGA[C]// IEEE International Symposium on Circuits and Systems. IEEE， 2014:329-332.[15]O’Leary P， Maloberti F.
+<br><br>
+<span style="margin-left:25px"></span> A direct-digital synthesizer with improved spectral performance[J]. IEEE Transactions on Communications， 1991， 39(7):1046-1048.致谢
+<br><br>
+<span style="margin-left:25px"></span>附录A外文资料调研阅读报告或书面翻译
+<br><br>
+<span style="margin-left:25px"></span>FPAG实现的1 GHz频率合成器
+<br><br>
+<span style="margin-left:25px"></span>摘要
+<br><br>
+<span style="margin-left:25px"></span>本文介绍了一种使用FPGA实现的高速直接数字频率合成器（DDFS）的架构与设计。
+<br><br>
+<span style="margin-left:25px"></span>该架构使用的角度旋转算法基于一种新型乘法器，使的正弦和余弦输出的幅度不会失真。这种算法利用DSP在FPGA上效果很好。最终的电路运行在赛灵思Virtex-7上，在时钟为1 GHz时功耗仅为54.9 mW，和使用ASIC实现的性能相当。1引言
+<br><br>
+<span style="margin-left:25px"></span>直接数字频率合成器(DDFS)提出以来，它就已经被用于数字通信系统中。
+<br><br>
+<span style="margin-left:25px"></span>DDFS具有很多特性使得它由于传统的模拟PLL，这些特性包括相位连续，快速的频率切换，精细的频率分辨率，广泛的频率范围和频谱纯度。大多数DDFS都是基于Tierney，Rader和Gold在1971年首先提出的结构，如图5.1所示。
+<br><br>
+<span style="margin-left:25px"></span>该结构由两个主要部分组成：相位累加器和正弦/余弦映射函数（SCMF）。相位累加器由M位加法器和寄存器组成。频率控制字（fcw）控制累加速率，从而控制输出频率。相位累加器的M位输出在输出SCMF之前，会被截断为W位，以产生。SCMF的过去由查找表组成，以将映射到输出X和Y，其中X =cos和Y =sin。查找表大小与M呈指数比例关系。因此，在过去40年中为减少查找表的大小已经进行了大量研究。FPGA在数字电路领域越来越受欢迎，尽管相对于ASIC设计而言，在相同的工艺下时钟速度和功耗开销都处于劣势。
+<br><br>
+<span style="margin-left:25px"></span>由于成本高昂的NRE，公司和研究机构可能要在不同时代的工艺中设计ASIC，而FPGA在这一方面更具吸引力。不断升级的无线标准正将无线基站从固定实现推向可重构方式，而这种技术通常被称为软件定义无线电。
+<br><br>
+<span style="margin-left:25px"></span>实现可重构的基站的一种方法是在设计中使用FPGA，使得无线标准的发展中，已部署的硬件可重新编程。社会对无线数据的需求越来越大，导致对每个小区基站需要的更多无线容量，基站也要变得更小和更节能。尽管在无线基站中使用DDFS作为数字无线电的一部分，但是很少有工作来优化FPGA中DDFS的实现和功能。这样的数字无线电实施方案倾向于使用提供的供应商提供的 DDFS内核，内核中的 DDFS为了达到指定的频谱纯度，其查找表结构中使用了功耗较大的 RAM和复杂的乘法器。在本文的工作中，我们提出了FPGA中DDFS的最佳实现，主要设计目标是提高比特率和降低功耗。图5.1 DDFS的基本结构
+<br><br>
+<span style="margin-left:25px"></span>2结构
+<br><br>
+<span style="margin-left:25px"></span>A.
+<br><br>
+<span style="margin-left:25px"></span> Coarse-fine DDFS多年来，基于coarse-fine结构的DDFS已经出现了有多个改进版本。
+<br><br>
+<span style="margin-left:25px"></span>在这种结构中，相位角被分解为coarse角度_M和fine角度_L。这允许DDFS分两阶段实现，其中coarse阶段通常在查找表中实现，而fine阶段通过角度旋转，线性插值或多项式插值实现。如下的旋转方式允许我们将DDFS分解成这两个阶段，其中(X_M，Y_M)是查找表的输出。Coarse-fine DDFS中的关键组件通常是fine的部分。
+<br><br>
+<span style="margin-left:25px"></span>本文提出的DDFS的基础架构是基于不会引入幅度失真的角度旋转算法。B. 角度旋转算法
+<br><br>
+<span style="margin-left:25px"></span>Madisetti使用CORDIC概念来提出了一个角度旋转算法，当该点围绕单位圆旋转时，该角度旋转算法不会使(X，Y)旋转后的向量发生扭曲。
+<br><br>
+<span style="margin-left:25px"></span>参见(1)中的余弦函数，可被分解为多个子旋转如公式(2)。
+<br><br>
+<span style="margin-left:25px"></span>式中K = cos2cos3... cosN+ 1是因式分解结果的比例因子，r_k{-1，1}。其中r通过设置初始相位_F和对的b个二进制位重新编码得到。对于足够大的k，tan 2^(-k)2^(-k)是可近似的，对于有限信号字长(SWL），它们是完全相等的。
+<br><br>
+<span style="margin-left:25px"></span>Madisetti还表明，当条件k(SWL 1)/ 2满足时，多次旋转可以合并成一次旋转。我们将分解为_M和_L，并满足合并条件，使得_L的MSB位于2^-（M + 1）处。最终，次旋转可以重新组合成以下单次旋转，公式如下：K表示缩放比例，初始相位为_F，(X_M，Y_M)是coarse阶段的输出。
+<br><br>
+<span style="margin-left:25px"></span>C. 两阶段重新编码
+<br><br>
+<span style="margin-left:25px"></span>(4)中的求和项表示带有二进制数字r_k的二进制数。
+<br><br>
+<span style="margin-left:25px"></span>我们可以通过用b_k表示r_k的值，将r_k重新编码成二进制补码二进制数t_k{0，1}的位。得到公式(5)。使用公式(5)和(6)和K，对公式(4)改写得到(7)。
+<br><br>
+<span style="margin-left:25px"></span>这些操作使得fine阶段旋转只剩下一次乘法操作。D.
+<br><br>
+<span style="margin-left:25px"></span> Coarse阶段本DDFS中的coarse阶段由查找表实现。
+<br><br>
+<span style="margin-left:25px"></span>归一化角度必须转换为弧度才能正常工作。为了不额外使用专用电路进行/ 4乘法，需要使用查找表乘法器[5]。这个/ 4项的需要在查找表中存储两个额外的值。这是因为X的值根据（7）计算为X = X_M-t*Y_M，其中值t是fine截断_L的函数，其也需要被转换为弧度。如（8）所示，我们必须将t的/ 4定为Y和Y_R。的M个MSB组成coarse角_M。查找表中的值由以下等式给出：3电路实现
+<br><br>
+<span style="margin-left:25px"></span>A整体结构
+<br><br>
+<span style="margin-left:25px"></span>设计的DDFS框图如图2所示。
+<br><br>
+<span style="margin-left:25px"></span>包括32位频率控制字fcw，用于控制32位相位累加器。然后相位累加器的输出被截断为20位。截断相位表示间隔[0，2]内的一个角度。由于正弦和余弦函数具有四分之一波对称性，所以删除的上两个MSB以将角映射成[0，/ 2）。另外，由于从/ 4到/ 2的余弦（或正弦）的值与从零到/ 4的正弦（或余弦）的镜像值相同，所以我们移除另一个MSB并有根据条件对称至单位圆的第一个八分圆内的镜像。18位的归一化角度’[0，/ 2）用于控制数据通路。
+<br><br>
+<span style="margin-left:25px"></span>的最高有效位控制/ 4镜像。’的后7位生成_M，用于寻址包含coarse阶段的128字ROM。’（表示为L）的最低有效十位在fine阶段控制旋转。通过在输出阶段中，单位圆的第一个八分圆的通过条件控制，将fine阶段的输出映射回其适当的八分圆。
+<br><br>
+<span style="margin-left:25px"></span> DDFS的结果输出是两个16位二进制补码X =cos和Y =sin。图5.2推荐DDFS结构框图
+<br><br>
+<span style="margin-left:25px"></span>B 相位累加器
+<br><br>
+<span style="margin-left:25px"></span>相位累加器的结构如图5.2所示。
+<br><br>
+<span style="margin-left:25px"></span>频率控制字fcw用于调整DDFS的调谐频率f0。数学上f_0 = fcw / 2 ^ M * F_clk，其中F_clk是系统的时钟频率，M是相位累加器中的位数。频率分辨率由F_clk / 2 ^ M给出，定义为输出频率随fcw的变化。对于本设计Fclk = 1 GHz和M = 32，产生0.23 Hz的频率分辨率。在每个时钟周期，相位累加器的输出归一化角度= fcw / 2 ^ M * n[0，2]。
+<br><br>
+<span style="margin-left:25px"></span>相位累加器的输出被截断为20位。这个选择是为了配合与SCMF杂散的中spurs大小。寄存器和加法器的在Xilinx Virtex-7 FPGA的DSP48E1中完成。
+<br><br>
+<span style="margin-left:25px"></span>该DSP芯片用于减少CLB（可重构逻辑块）片的数量，以减少时钟网络上的负载，并保证1 GHz的时序。 fcw被提供给DSP片的C输入，取自P输出。 32位相位累加器被映射到DSP的位47:16以便最小化功耗，否则DSP的MSB将继续依赖于来自的MSB的进位。C角度反转
+<br><br>
+<span style="margin-left:25px"></span>角度反转将相位累加器的转换为单位圆的第一个八分圆中的值。
+<br><br>
+<span style="margin-left:25px"></span>为实现这个映射，去掉了两个MSB（MSB [1]和MSB [2]）的。这有效地将相位从[0，2]截断为[0，1/2]，因此将角度映射到第一象限。使用MSB [3]使得到的角度’有条件地反映约/ 4，以生成值[0，/ 4）。 MSB [3] = 1表示’表示范围[/ 4，/ 2）; 当MSB [3] = 0时，’无需修改，否则取补码。镜像操作在数学方式表示为= 1/2-’。
+<br><br>
+<span style="margin-left:25px"></span>因为’表示在区间[0，1/2]内没有符号位的定点数，所以使用1/2减的操作等效于补码操作。而不需要执行二进制补码。因此，所得的值可以比它应该少一LSB。通常这一个LSB误差会导致明显的相位截断杂散。为了避免这种杂散，我们将补偿这个丢失的LSB，这是一个重要的新技术，与[5]中提到的方法相关，D 只读型存储器
+<br><br>
+<span style="margin-left:25px"></span>ROM有三个作用。
+<br><br>
+<span style="margin-left:25px"></span>第一个是实现我们的DDFS的coarse阶段输出。在本设计中，ROM有128个字。ROM的第二个目的是作为弧度转换，将[0，1/4]转换为[0，/ 4）。
+<br><br>
+<span style="margin-left:25px"></span>许多基于旋转的DDFS设计为此目的使用专用的/ 4乘法器电路。相反，我们将/ 4因子包含在预先计算的ROM数据中。这样做，而不仅要求两个ROM输出，cos_M和sin_M，我们现在需要四个输出：X_M，Y_M，X_R和Y_R。存储在ROM位置的值由（8）给出。幸运的是，第二组输出仅需要七位，而不是整个17位SWL。这需要更多的FPGA结构LUT来实现ROM，但实际上小于在结构中实现/ 4乘数的开销。或者，我们可以在DSP片中实现/ 4乘法器，但是比仅仅使ROM更大而导致更大的功耗。在ROM中包含/ 4因子的另一个优点是减少了延迟。ROM的最终目的是补偿数据路径中的有限信号字长产生的错误和截断。
+<br><br>
+<span style="margin-left:25px"></span>通过优化ROM的值，以最大限度地减少DDFS相对于理想值X和Y的误差。这允许使用SWL的位数比输出精度大2位，从而不需要使用四舍五入。Virtex-7 FPGA的原生LUT具有六个输入。
+<br><br>
+<span style="margin-left:25px"></span>128字ROM的每个输出位分解为两个六输入LUT，一个MUXF7和一组输出寄存器。所有这四个组件都可以封装在单个逻辑芯片上，这对实现1 GHz时钟至关重要。E 相位旋转
+<br><br>
+<span style="margin-left:25px"></span>1) 记录
+<br><br>
+<span style="margin-left:25px"></span>将_L的原码重新编码为带符号二进制补码t，如（6）所示。
+<br><br>
+<span style="margin-left:25px"></span>可以将t_N + 1位设置为0，并在ROM中进行补偿，而不会使频谱性能下降。因此，重新编码在角度的MSB上减少到单个反向器。2）乘法-加法器
+<br><br>
+<span style="margin-left:25px"></span>乘法-加法器是角度旋转阶段的核心。
+<br><br>
+<span style="margin-left:25px"></span>其结构如图5.2所示。这个模块有两个功能。主要功能是使用带符号二进制补码t（它是L的重新编码版本）进行fine角度旋转（7）。乘法器的次要功能是输出’的LSB的/ 4镜像。
+<br><br>
+<span style="margin-left:25px"></span>回想一下/ 4镜只放在ROM之前，而不是在乘法器之前。使用乘法器的条件否定特征可以无代价实现镜像，无需逻辑成本。另外，通过执行t的二进制补数否定，我们补偿ROM的/ 4镜像中的补码否定缺失LSB。这是因为，对于由二进制补码n位数表示的最小值，该数字的负值溢出到一个附加位。关键的细节是，由于重新编码，t的符号位是_L的MSB的倒数。这意味着对于’= 1/4（表示弧度角/ 4），t的值为-1/4。基于MSB [3]的乘法器中的负t使其旋转1/4而不是溢出到0。该虚拟位在ROM/ 4镜像中增加一个LSB。乘法器 - 加法器通过在FPGA中的DSP片中实现。
+<br><br>
+<span style="margin-left:25px"></span> DSP片中的硬乘法器比在FPGA架构中实现的乘法器更高效。对于X’，Y_R被提供给DSP片的A输入，t被提供给B输入，X_M被提供给C输入，X’取自P输出。对于Y’，X_R被提供给A输入，t被提供给B输入，Y_M被提供给C输入，Y’取自P输出。使用输入位A [6：0]，B [9：0]和C [23：7]。因为t是一个有符号的数字，所以它必须扩展到B [17:10]。 X’和Y’取自P [23：9]。F 输出阶段
+<br><br>
+<span style="margin-left:25px"></span>输出阶段负责将单位圆[0，/ 4]的第一个八分圆的X’和Y’输出映射到[0，2]内的正确的八分圆。
+<br><br>
+<span style="margin-left:25px"></span>这可以在三个MSB控制下，通过多路选择器和反向逻辑实现。X’和Y’与两个多路选择进行交换，其次是减法器，可选择地反向两者。注意在交换阶段之后从15位增长到16位，以允许在否定后包含符号位。G延迟
+<br><br>
+<span style="margin-left:25px"></span>本设计具有8个时钟周期的切换延迟。
+<br><br>
+<span style="margin-left:25px"></span>在1 GHz时，这相当于8 ns。时钟周期延迟分别是：相位累加器中的两个周期，/ 4镜中的一个周期，ROM中的一个周期，乘法器加法器中的三个周期，以及输出级中的一个周期。5 结论
+<br><br>
+<span style="margin-left:25px"></span>该设计在Virtex-7 485T FPGA中实现。
+<br><br>
+<span style="margin-left:25px"></span>它需要一个139 LUTs，3个DSP48，并在1 GHz时消耗54.9 mW的功率。以前只能在ASIC设计中实现这种性能水平。由于1 GHz性能超过器件规格，所以使用BIST电路验证了最大数据速率。静态时序分析报告在-3速等级FPGA器件中实现741.84 MHz性能，这是DSP片的最大速度。测量的功率与最近报道的FPGA工作相比处于领先[6] - [7]，即使在考虑到器件差异时也是如此。DDFS还优于在十年之前实现的ASIC设计[5]，FPGA的处理优势被抵消了ASIC功率开销。我们设计的SFDR为120.2 dBc，SNR为96.5 dB。时间误差总是不超过一个LSB（与理想的舍入值相比）。表5.1性能比较
+<br><br>
+<span style="margin-left:25px"></span>
+
+<br>
+<div style="margin-left:8px">
+
+<div style="text-align:center;background-color:#CA122C;margin-top:30px;overflow:hidden;">
+<a href="http://www.paperpass.com/publish/index?from=ppreport_banner" target="_blank" style="display:block;"><img height="180" src="http://file.paperpass.com/images/fabiao.jpg"></a>
+</div>
+
+</div>
+</div>
+
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2017 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>
